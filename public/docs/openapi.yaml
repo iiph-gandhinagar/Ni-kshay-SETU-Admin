@@ -1,0 +1,2110 @@
+openapi: 3.0.0
+info:
+  title: TB New Design
+  contact: {}
+  version: '1.0'
+servers:
+  - url: http://localhost:8001/api
+    variables: {}
+  - url: http://localhost:8000
+    variables: {}
+  - url: http://192.168.0.37:8000
+    variables: {}
+paths:
+  /api/get-all-blogs:
+    get:
+      tags:
+        - Static Blogs
+      summary: Get All Blogs
+      operationId: GetAllBlogs
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-blogs-details/All You Need to Know About Tuberculosis:
+    get:
+      tags:
+        - Static Blogs
+      summary: Get Blog Details
+      operationId: GetBlogDetails
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-similar-blogs-details/All You Need to Know About Tuberculosis:
+    get:
+      tags:
+        - Static Blogs
+      summary: Get Similar Blog Details
+      operationId: GetSimilarBlogDetails
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-faq:
+    get:
+      tags:
+        - Static FAQs
+      summary: Get All FAQs
+      operationId: GetAllFAQs
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/store-static-enquiry:
+    post:
+      tags:
+        - Static FAQs
+      summary: Store Static Enquiry
+      operationId: StoreStaticEnquiry
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - email
+                - message
+                - subject
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: info@digiflux.io
+                message:
+                  type: string
+                  example: what is Tuberculosis
+                subject:
+                  type: string
+                  example: Tuberculosis, or TB, is an infectious disease that usually affects the lungs. It is caused by bacteria called Mycobacterium tuberculosis. TB is spread through the air from person to person.
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-dashboard-details:
+    get:
+      tags:
+        - Static dashboard Data
+      summary: Get Dashboard Data
+      operationId: GetDashboardData
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-app-config:
+    get:
+      tags:
+        - Static App Config
+      summary: Get All App Config
+      operationId: GetAllAppConfig
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-home-data:
+    get:
+      tags:
+        - Static Home data
+      summary: Get Home Data
+      operationId: GetHomeData
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /get-static-release:
+    get:
+      tags:
+        - Static Release
+      summary: Get Static Release
+      operationId: GetStaticRelease
+      parameters:
+        - name: per_page
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 5
+        - name: orderBy
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: id
+        - name: orderDirection
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: asc
+        - name: page
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 1
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8001/api
+          variables: {}
+  /api/get-static-modules:
+    get:
+      tags:
+        - Static Release
+      summary: Get All Static Module
+      operationId: GetAllStaticModule
+      parameters:
+        - name: per_page
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 5
+        - name: orderBy
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: id
+        - name: orderDirection
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: asc
+        - name: page
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 1
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-static-modules-by-slug/Diagnostic care cascade for pediatric TB paitent and detail explanation on how it works.:
+    get:
+      tags:
+        - Static Release
+      summary: Get Static Module By Slug
+      operationId: GetStaticModuleBySlug
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-static-resource-material:
+    get:
+      tags:
+        - Static Release
+      summary: Get All Static Resource material
+      operationId: GetAllStaticResourcematerial
+      parameters:
+        - name: per_page
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 5
+        - name: orderBy
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: id
+        - name: orderDirection
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: asc
+        - name: page
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 1
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-tour:
+    get:
+      tags:
+        - Tour APIS
+      summary: Get All Tour Details
+      operationId: GetAllTourDetails
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-tour-slides:
+    get:
+      tags:
+        - Tour APIS
+      summary: Get All Tour slides
+      operationId: GetAllTourslides
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/store-leaderboard-details-existing-user:
+    get:
+      tags:
+        - Existing User Leader Board Entry Script
+      summary: Leader Board Entry
+      operationId: LeaderBoardEntry
+      parameters:
+        - name: lang
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: en
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-leaderboard-details:
+    get:
+      tags:
+        - Existing User Leader Board Entry Script
+      summary: Get LeaderBord Details
+      operationId: GetLeaderBordDetails
+      parameters:
+        - name: per_page
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 50
+        - name: orderBy
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: id
+        - name: orderDirection
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: asc
+        - name: page
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 1
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-leaderboard-task-list:
+    get:
+      tags:
+        - Existing User Leader Board Entry Script
+      summary: Get Leader Board Task List Done By Subscriber
+      operationId: GetLeaderBoardTaskListDoneBySubscriber
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: en
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-leaderboard-achivements:
+    get:
+      tags:
+        - Existing User Leader Board Entry Script
+      summary: Get Leader Board Achivements
+      operationId: GetLeaderBoardAchivements
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-level-wise-badges-information:
+    get:
+      tags:
+        - Existing User Leader Board Entry Script
+      summary: Get LeaderBoard Information
+      operationId: GetLeaderBoardInformation
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/store-sub-module-usage:
+    post:
+      tags:
+        - Existing User Leader Board Entry Script
+      summary: Store SubModule Usage
+      operationId: StoreSubModuleUsage
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/StoreSubModuleUsageRequest'
+              description: ''
+              example:
+                - module: Guidance on ADR
+                  sub_module_id: 1
+                  time: 5
+                  activity_type: submodule_usage
+                - module: Guidance on ADR
+                  sub_module_id: 2
+                  time: 5
+                  activity_type: submodule_usage
+                - module: Case Definition
+                  sub_module_id: 3
+                  time: 5
+                  activity_type: submodule_usage
+                - module: Diagnosis Algorithm
+                  sub_module_id: 1
+                  time: 300
+                  activity_type: submodule_usage
+                - module: Treatment Algorithm
+                  sub_module_id: 2
+                  time: 300
+                  activity_type: submodule_usage
+                - module: Latent TB Infection
+                  sub_module_id: 1
+                  time: 300
+                  activity_type: submodule_usage
+                - module: Differentiated Care Of TB Patients
+                  sub_module_id: 1
+                  time: 300
+                  activity_type: submodule_usage
+                - module: NTEP Intervention
+                  sub_module_id: 1
+                  time: 300
+                  activity_type: submodule_usage
+            example:
+              - module: Guidance on ADR
+                sub_module_id: 1
+                time: 5
+                activity_type: submodule_usage
+              - module: Guidance on ADR
+                sub_module_id: 2
+                time: 5
+                activity_type: submodule_usage
+              - module: Case Definition
+                sub_module_id: 3
+                time: 5
+                activity_type: submodule_usage
+              - module: Diagnosis Algorithm
+                sub_module_id: 1
+                time: 300
+                activity_type: submodule_usage
+              - module: Treatment Algorithm
+                sub_module_id: 2
+                time: 300
+                activity_type: submodule_usage
+              - module: Latent TB Infection
+                sub_module_id: 1
+                time: 300
+                activity_type: submodule_usage
+              - module: Differentiated Care Of TB Patients
+                sub_module_id: 1
+                time: 300
+                activity_type: submodule_usage
+              - module: NTEP Intervention
+                sub_module_id: 1
+                time: 300
+                activity_type: submodule_usage
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-user-v3:
+    get:
+      tags:
+        - Register
+      summary: Get User V3
+      operationId: GetUserV3
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/update-user-details-v2:
+    post:
+      tags:
+        - Register
+      summary: Update User Detail
+      operationId: UpdateUserDetail
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - cadre_type
+              type: object
+              properties:
+                cadre_type:
+                  type: string
+                  example: National_Level
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /store-user-v2:
+    post:
+      tags:
+        - Register
+      summary: Store User V2
+      operationId: StoreUserV2
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - name
+                - phone_no
+                - cadre_type
+                - country_id
+                - cadre_id
+                - block_id
+                - state_id
+                - district_id
+                - health_facility_id
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Amisha
+                phone_no:
+                  type: integer
+                  format: int64
+                  example: 8460466257
+                cadre_type:
+                  type: string
+                  example: National_Level
+                country_id:
+                  type: integer
+                  format: int32
+                  example: 1
+                cadre_id:
+                  type: integer
+                  format: int32
+                  example: 70
+                block_id:
+                  type: integer
+                  format: int32
+                  example: 0
+                state_id:
+                  type: integer
+                  format: int32
+                  example: 0
+                district_id:
+                  type: integer
+                  format: int32
+                  example: 0
+                health_facility_id:
+                  type: integer
+                  format: int32
+                  example: 0
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8001/api
+          variables: {}
+  /api/get-feedback-details:
+    get:
+      tags:
+        - User Feedback
+      summary: Get Feedback Details
+      operationId: GetFeedbackDetails
+      parameters:
+        - name: feedback_question_skip
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 0
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/store-feedback-details:
+    post:
+      tags:
+        - User Feedback
+      summary: Store Feedback
+      operationId: StoreFeedback
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/StoreFeedbackRequest'
+                - example:
+                    payload:
+                      ratings:
+                        - id: 4
+                          rating: 4
+                          skip: 0
+                      review: User Friendly App UI
+            example:
+              payload:
+                ratings:
+                  - id: 4
+                    rating: 4
+                    skip: 0
+                review: User Friendly App UI
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-flash-news:
+    get:
+      tags:
+        - Flash News
+      summary: Get All Flash News
+      operationId: GetAllFlashNews
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-similar-apps:
+    get:
+      tags:
+        - Flash News
+      summary: Get All Similar Apps
+      operationId: GetAllSimilarApps
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-app-home-data:
+    get:
+      tags:
+        - Flash News
+      summary: Get Home Data
+      operationId: GetHomeData1
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-module-usage:
+    get:
+      tags:
+        - Flash News
+      summary: Get Module Usage
+      operationId: GetModuleUsage
+      parameters:
+        - name: lang
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: gu
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-recently-added:
+    get:
+      tags:
+        - Flash News
+      summary: Get recently Added Material
+      operationId: GetrecentlyAddedMaterial
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-master-search:
+    get:
+      tags:
+        - Master Search
+      summary: Master Search Data
+      operationId: MasterSearchData
+      parameters:
+        - name: search_text
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: pulmonary
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-module-master-search:
+    get:
+      tags:
+        - Master Search
+      summary: Get Module Master Search
+      operationId: GetModuleMasterSearch
+      parameters:
+        - name: search_text
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: Available
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-sub-module-master-search:
+    get:
+      tags:
+        - Master Search
+      summary: Get SubModule Master Search
+      operationId: GetSubModuleMasterSearch
+      parameters:
+        - name: search_text
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: Extra Pulmonary
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-resource-material-master-search:
+    get:
+      tags:
+        - Master Search
+      summary: Get Resource Material Master Search
+      operationId: GetResourceMaterialMasterSearch
+      parameters:
+        - name: search_text
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: Available
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-chat-question-master-search:
+    get:
+      tags:
+        - Master Search
+      summary: Get Chat Question Master Search
+      operationId: GetChatQuestionMasterSearch
+      parameters:
+        - name: search_text
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: Available
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-certificates:
+    get:
+      tags:
+        - Certificates
+      summary: Get All Certificates
+      operationId: GetAllCertificates
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-certificate-pdf/5:
+    get:
+      tags:
+        - Certificates
+      summary: Get Certificates PDF
+      operationId: GetCertificatesPDF
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-set-master-node:
+    get:
+      tags:
+        - Set Master Node ID in modules
+      summary: Set Master Node Id
+      operationId: SetMasterNodeId
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-case-definitions-master-nodes-v2:
+    get:
+      tags:
+        - Algorthms APIs
+      summary: Case Definition Master Node v2
+      operationId: CaseDefinitionMasterNodev2
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-cgc-interventions-algorithms-master-nodes-v2:
+    get:
+      tags:
+        - Algorthms APIs
+      summary: CGC Algo Master Node v2
+      operationId: CGCAlgoMasterNodev2
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-diagnoses-algorithms-master-nodes-v2:
+    get:
+      tags:
+        - Algorthms APIs
+      summary: Diagnosis Algo Master Node v2
+      operationId: DiagnosisAlgoMasterNodev2
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-treatment-algorithms-master-nodes-v2:
+    get:
+      tags:
+        - Algorthms APIs
+      summary: Treatment Algo Master Node v2
+      operationId: TreatmentAlgoMasterNodev2
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-guidance-on-adverse-drug-reactions-master-nodes-v2:
+    get:
+      tags:
+        - Algorthms APIs
+      summary: Guidance On ADR Algo Master Node v2
+      operationId: GuidanceOnADRAlgoMasterNodev2
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-latent-tb-infection-master-nodes-v2:
+    get:
+      tags:
+        - Algorthms APIs
+      summary: Latent Tb Infection Algo Master Node v2
+      operationId: LatentTbInfectionAlgoMasterNodev2
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-differential-care-algorithms-master-nodes-v2:
+    get:
+      tags:
+        - Algorthms APIs
+      summary: Differential Care Algo Master Node v2
+      operationId: DifferentialCareAlgoMasterNodev2
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-dynamic-algorithms-master-nodes-v2/2:
+    get:
+      tags:
+        - Algorthms APIs
+      summary: Dynamic Algo Master Node v2
+      operationId: DynamicAlgoMasterNodev2
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-past-assessment:
+    get:
+      tags:
+        - Assessment APis
+      summary: Get All Past Assessment
+      operationId: GetAllPastAssessment
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-future-assessment:
+    get:
+      tags:
+        - Assessment APis
+      summary: Get All Future Assessment s
+      operationId: GetAllFutureAssessments
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-assessment-performace:
+    get:
+      tags:
+        - Assessment APis
+      summary: Get Assessment performance
+      operationId: GetAssessmentperformance
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-survey-forms:
+    get:
+      tags:
+        - Survey Forms
+      summary: Get All Active Surveys
+      operationId: GetAllActiveSurveys
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-survey-by-id/1:
+    get:
+      tags:
+        - Survey Forms
+      summary: Get Survey questions By Survey ID
+      operationId: GetSurveyquestionsBySurveyID
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/store-survey-details:
+    post:
+      tags:
+        - Survey Forms
+      summary: Store Survey Details
+      operationId: StoreSurveyDetails
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/StoreSurveyDetailsRequest'
+              description: ''
+              example:
+                - survey_id: 1
+                  survey_question_id: 1
+                  answer: option1
+                - survey_id: 1
+                  survey_question_id: 2
+                  answer: No suggestion
+            example:
+              - survey_id: 1
+                survey_question_id: 1
+                answer: option1
+              - survey_id: 1
+                survey_question_id: 2
+                answer: No suggestion
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/get-all-automatic-notification:
+    get:
+      tags:
+        - Automatic Notification
+      summary: Get All Automatic Notification
+      operationId: GetAllAutomaticNotification
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/script-to-update-plateform:
+    get:
+      tags:
+        - Script For Update Plateform Details In User App Version
+      summary: New Request
+      operationId: NewRequest
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate:
+    get:
+      tags:
+        - Translation
+      summary: Translate
+      operationId: Translate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-training-tag:
+    get:
+      tags:
+        - Translation
+      summary: T Trainning Tag translate
+      operationId: TTrainningTagtranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-chat-question:
+    get:
+      tags:
+        - Translation
+      summary: Chat Question Translate
+      operationId: ChatQuestionTranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /api/translate-case-def-algo:
+    get:
+      tags:
+        - Translation
+      summary: Case Defintion Algorithm translate
+      operationId: CaseDefintionAlgorithmtranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-diagnosis-algo:
+    get:
+      tags:
+        - Translation
+      summary: Diagnosis Algorthm Translate
+      operationId: DiagnosisAlgorthmTranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-cgc-algo:
+    get:
+      tags:
+        - Translation
+      summary: CGC Algorithm translate
+      operationId: CGCAlgorithmtranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-differential-care-algo:
+    get:
+      tags:
+        - Translation
+      summary: Differential Care Algo translate
+      operationId: DifferentialCareAlgotranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-guidance-on-adr-algo:
+    get:
+      tags:
+        - Translation
+      summary: Guidance On ADR algo Translate
+      operationId: GuidanceOnADRalgoTranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-latent-tb-algo:
+    get:
+      tags:
+        - Translation
+      summary: Latent Tb Algo Translate
+      operationId: LatentTbAlgoTranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-treatment-algo:
+    get:
+      tags:
+        - Translation
+      summary: Treatment Algo Translate
+      operationId: TreatmentAlgoTranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-app-config:
+    get:
+      tags:
+        - Translation
+      summary: App Config
+      operationId: AppConfig
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /api/translate-screening-tool:
+    get:
+      tags:
+        - Translation
+      summary: Screening tool Translate
+      operationId: ScreeningtoolTranslate
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /get-count-list-data:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get Count List Data
+      operationId: GetCountListData
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /get-usage-count:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get Usage Count
+      operationId: GetUsageCount
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /get-subscribers-count:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get Subscribers count
+      operationId: GetSubscriberscount
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: overall
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /get-cadre-wise-subscriber-count:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get cadre wise Subscriber count
+      operationId: GetcadrewiseSubscribercount
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: overall
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /get-module-wise-subscriber-count:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get Module Wise Subscriber
+      operationId: GetModuleWiseSubscriber
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: overall
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /get-leaderboard-count:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get LeaderBoard Details
+      operationId: GetLeaderBoardDetails
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: overall
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /get-chatquestion-hit-count:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get Chat Question Hit Count
+      operationId: GetChatQuestionHitCount
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: last 30 days
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /get-chatkeyword-hit-count:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get Chat Keyword Hit Count
+      operationId: GetChatKeywordHitCount
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: last 30 days
+        - name: state_id
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 21
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /get-user-feedback-details:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get User Feedback Detail
+      operationId: GetUserFeedbackDetail
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: overall
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /get-assessment-submission-details:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get Assessment Submission Detail
+      operationId: GetAssessmentSubmissionDetail
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: overall
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://localhost:8000
+          variables: {}
+  /get-app-opened-count:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get App Opened Count
+      operationId: GetAppOpenedCount
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: monthly
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /export-leader-board:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Leader Board Export
+      operationId: LeaderBoardExport
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /export-chatbot-question:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Chat QUesiron Export
+      operationId: ChatQUesironExport
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /export-chatbot-keyword:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Chatbot Keyword Export
+      operationId: ChatbotKeywordExport
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+  /get-role-wise-state:
+    get:
+      tags:
+        - New Dashboard APIs
+      summary: Get role wise Admin user
+      operationId: GetrolewiseAdminuser
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      servers:
+        - url: http://192.168.0.37:8000
+          variables: {}
+components:
+  schemas:
+    StoreSubModuleUsageRequest:
+      title: StoreSubModuleUsageRequest
+      required:
+        - module
+        - sub_module_id
+        - time
+        - activity_type
+      type: object
+      properties:
+        module:
+          type: string
+        sub_module_id:
+          type: integer
+          format: int32
+        time:
+          type: integer
+          format: int32
+        activity_type:
+          type: string
+      example:
+        module: Guidance on ADR
+        sub_module_id: 1
+        time: 5
+        activity_type: submodule_usage
+    StoreFeedbackRequest:
+      title: StoreFeedbackRequest
+      required:
+        - payload
+      type: object
+      properties:
+        payload:
+          $ref: '#/components/schemas/Payload'
+      example:
+        payload:
+          ratings:
+            - id: 4
+              rating: 4
+              skip: 0
+          review: User Friendly App UI
+    Payload:
+      title: Payload
+      required:
+        - ratings
+        - review
+      type: object
+      properties:
+        ratings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Rating'
+          description: ''
+        review:
+          type: string
+      example:
+        ratings:
+          - id: 4
+            rating: 4
+            skip: 0
+        review: User Friendly App UI
+    Rating:
+      title: Rating
+      required:
+        - id
+        - rating
+        - skip
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        rating:
+          type: integer
+          format: int32
+        skip:
+          type: integer
+          format: int32
+      example:
+        id: 4
+        rating: 4
+        skip: 0
+    StoreSurveyDetailsRequest:
+      title: StoreSurveyDetailsRequest
+      required:
+        - survey_id
+        - survey_question_id
+        - answer
+      type: object
+      properties:
+        survey_id:
+          type: integer
+          format: int32
+        survey_question_id:
+          type: integer
+          format: int32
+        answer:
+          type: string
+      example:
+        survey_id: 1
+        survey_question_id: 1
+        answer: option1
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+  - name: Static Blogs
+  - name: Static FAQs
+  - name: Static dashboard Data
+  - name: Static App Config
+  - name: Static Home data
+  - name: Static Release
+  - name: Tour APIS
+  - name: Existing User Leader Board Entry Script
+  - name: Register
+  - name: User Feedback
+  - name: Flash News
+  - name: Master Search
+  - name: Certificates
+  - name: Set Master Node ID in modules
+  - name: Algorthms APIs
+  - name: Assessment APis
+  - name: Survey Forms
+  - name: Automatic Notification
+  - name: Script For Update Plateform Details In User App Version
+  - name: Translation
+  - name: New Dashboard APIs

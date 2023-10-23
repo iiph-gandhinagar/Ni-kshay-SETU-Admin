@@ -1,0 +1,89 @@
+version: 2.1
+
+name: NS_Deploy
+on:
+  push:
+    branches: [swagger/integration]
+
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.4-node-browsers
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_DATABASE: "test"
+
+    steps:
+      - checkout
+
+      # Install Php Extension
+      - run:
+          name: Install PHP extensions
+          command: |
+            sudo docker-php-ext-install pdo_mysql
+            sudo docker-php-ext-enable pdo_mysql
+            sudo apt-get install -y libpng-dev
+            sudo apt-get install -y libjpeg-dev
+            sudo apt-get install -y libwebp-dev
+            sudo apt-get install -y libxpm-dev
+            sudo docker-php-ext-configure gd  --with-jpeg --with-webp --with-xpm
+            sudo docker-php-ext-install -j$(nproc) gd
+            sudo docker-php-ext-install exif
+
+      # Restore composer dependencies
+      - run:
+          name: Install Composer dependencies
+          command: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts --ignore-platform-reqs
+
+      # Restore node dependencies
+      - run:
+          name: Install Node dependencies
+          command: npm install
+
+      # After running PHPUnit tests
+      - run:
+          name: Check PDO extension
+          command: php -m | grep pdo
+
+      # Create and configure the .env file
+      - run:
+          name: Configure .env
+          command: cp .env.example .env
+
+      # Debugging: Display contents of .env file
+      - run:
+          name: Display .env contents
+          command: cat .env
+
+      # Set permissions for storage directory
+      - run:
+          name: Set permissions for storage directory
+          command: sudo chmod -R 775 storage
+
+      # Generate an application key
+      - run:
+          name: Generate application key
+          command: php artisan key:generate
+
+      # Clear Cache
+      - run:
+          name: Clear cache
+          command: php artisan config:cache
+
+      - run:
+          name: "Create database and run migration"
+          command: php artisan migrate --seed
+
+      # Run PHPUnit tests
+      - run:
+          name: Run PHPUnit tests
+          command: vendor/bin/phpunit
+
+services:
+  mysql:
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build

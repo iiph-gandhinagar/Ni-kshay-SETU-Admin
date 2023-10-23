@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>tags</th>
+        <th>patterns</th>
+        <th>counts</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>

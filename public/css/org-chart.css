@@ -1,0 +1,41 @@
+#chart-container {
+    font-family: Arial;
+    height: 100%;
+    border: 1px solid #aaa;
+    overflow: auto;
+    text-align: center;
+    border: none !important;
+ }
+
+ .orgchart {
+    background-image: none !important;
+    height: unset !important;
+ }
+
+
+ .orgchart .node {
+    max-width: 200px !important;
+    height: auto !important;
+ }
+
+ .orgchart .node .content {
+    height: unset !important;
+    min-height: 20px !important;
+    white-space: inherit !important;
+ }
+
+ .orgchart-container {
+    border: none !important;
+ }
+
+ .orgchart .node .title {
+    width: unset !important;
+    font-size: .75rem;
+    height: unset !important;
+    background-color: #30aab9 !important;
+    padding: 4px 10px !important;
+    font-weight: 600 !important;
+ }
+ .orgchart .node .title .symbol {
+    display: none !important
+ }

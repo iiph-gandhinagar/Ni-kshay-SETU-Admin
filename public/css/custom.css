@@ -1,0 +1,21 @@
+.sidebar-fixed .sidebar {
+    width: 215px !important;
+}
+
+.sidebar .sidebar-nav {
+    width: 215px !important;
+}
+
+.sidebar .nav {
+    width: 215px !important;
+}
+
+span.multiselect__tag {
+    white-space: normal !important;
+}
+
+.action_buttons {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

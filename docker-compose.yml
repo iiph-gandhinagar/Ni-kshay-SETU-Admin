@@ -1,0 +1,50 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: digiflux
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: ni-kshay-setu-be
+    container_name: ni-kshay-setu-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - ni-kshay-setu_net
+
+  db:
+    image: mysql:8.0
+    container_name: ni-kshay-setu-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./ns_data_volume:/var/lib/mysql
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - ni-kshay-setu_net
+
+  nginx:
+    image: nginx:alpine
+    container_name: ni-kshay-setu-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - ni-kshay-setu_net
+
+networks:
+  ni-kshay-setu_net:
+    driver: bridge

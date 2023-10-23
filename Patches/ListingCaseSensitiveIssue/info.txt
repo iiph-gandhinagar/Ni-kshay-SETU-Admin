@@ -1,0 +1,22 @@
+Path --> vendor/brackets/admin-listing/src/AdminListing.php
+
+   private function searchLike($query, $column, $token): void
+    {
+
+        // MySQL and SQLite uses 'like' pattern matching operator that is case insensitive
+        $likeOperator = 'LIKE';
+
+        // but PostgreSQL uses 'ilike' pattern matching operator for this same functionality
+        if (DB::connection()->getDriverName() == 'pgsql') {
+            $likeOperator = 'ilike';
+        }
+
+        // $query->orWhere($this->materializeColumnName($column, true), $likeOperator, '%'.$token.'%');
+      ---->  $query->orWhereRaw($this->materializeColumnName($column,false) .' like convert(? using utf8mb4) collate utf8mb4_general_ci', ['%'.strtolower($token).'%']);
+    }
+
+path ----> /home/digiflux/work/tb-backend/vendor/brackets/admin-listing/src/AdminListing.php
+
+Line ni. --->157
+$this->attachOrdering($request->input('orderBy', $this->model->getKeyName()), $request->input('orderDirection', 'desc'))
+            ->attachSearch($request->input('search', null), $searchIn);

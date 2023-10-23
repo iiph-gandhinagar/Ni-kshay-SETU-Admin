@@ -1,0 +1,7018 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TB-Backend",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/api",
+      "variables": {}
+    },
+    {
+      "url": "http://192.168.0.114:8000/api",
+      "variables": {}
+    },
+    {
+      "url": "https://tbapp.srcicds-iiphg.org/api/search-by-keyword-v2",
+      "variables": {}
+    },
+    {
+      "url": "http://localhost:8001/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/get-root-folders": {
+      "get": {
+        "tags": [
+          "Resouorce Material"
+        ],
+        "summary": "Get root folders",
+        "operationId": "Getrootfolders",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-files-by-parent/58": {
+      "get": {
+        "tags": [
+          "Resouorce Material"
+        ],
+        "summary": "Get files by parentId",
+        "operationId": "GetfilesbyparentId",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "name"
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-tag-with-master-data": {
+      "get": {
+        "tags": [
+          "Training APIs"
+        ],
+        "summary": "get-tag-with-master-data",
+        "operationId": "get-tag-with-master-data",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-tags": {
+      "get": {
+        "tags": [
+          "Training APIs"
+        ],
+        "summary": "get-all-tags",
+        "operationId": "get-all-tags",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "+8Wx6KSSxjuHB4SBDNP+lHqmNgcA7L6B8K8Vlo0Tf6fkidH8kThAI3q28lKl9m9L"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/submit-feedback": {
+      "post": {
+        "tags": [
+          "Training APIs"
+        ],
+        "summary": "submit-feedback",
+        "operationId": "submit-feedback",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "activity_id",
+                  "question_id",
+                  "tag_id",
+                  "like",
+                  "dislike"
+                ],
+                "type": "object",
+                "properties": {
+                  "activity_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 3
+                  },
+                  "question_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "tag_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "like": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "dislike": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://192.168.0.114:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-text-to-speech": {
+      "post": {
+        "tags": [
+          "Training APIs"
+        ],
+        "summary": "get-text-to-speech",
+        "operationId": "get-text-to-speech",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "text"
+                ],
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "example": "<p>&bull;&nbsp;&nbsp; &nbsp;Recheck the dose of drugs&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;Exclude all other causes of symptoms&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;Estimate the severity of the adverse effects&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;Document the adverse effects&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;The offending drugs may need to be stopped (if the severity is more) and to be reintroduced gradually when the symptoms disappear&nbsp;<br />\\n&nbsp;</p>"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-keywords": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Get-keywords",
+        "operationId": "Chat-Get-keywords",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/search-by-keyword-v2": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Search-by-keyword-v2",
+        "operationId": "Chat-Search-by-keyword-v2",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Presumptive Pulmonary TB"
+            }
+          },
+          {
+            "name": "NTEP",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/submit-question-hit": {
+      "post": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Submit-question-hit",
+        "operationId": "Chat-Submit-question-hit",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Chat-Submit-question-hitRequest"
+                  },
+                  {
+                    "example": {
+                      "question_id": 1,
+                      "subscriber_id": 1,
+                      "session_token": "asd-asd-asd"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "question_id": 1,
+                "subscriber_id": 1,
+                "session_token": "asd-asd-asd"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-questions-by-keyword": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Get-questions-by-keyword",
+        "operationId": "Chat-Get-questions-by-keyword",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-questions-by-keyword-v2/1": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Get-questions-by-keyword-v2",
+        "operationId": "Chat-Get-questions-by-keyword-v2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-questions-by-keyword-v3/1": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Get-questions-by-keyword-v3",
+        "operationId": "Chat-Get-questions-by-keyword-v3",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/search-by-keyword/FDC": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "search-by-keyword/tuberculosis",
+        "operationId": "search-by-keyword/tuberculosis",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/hi": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Search by keyword V2",
+        "operationId": "SearchbykeywordV2",
+        "parameters": [
+          {
+            "name": "session_token",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "1-2022-03-25T09:23:00.877Z"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://tbapp.srcicds-iiphg.org/api/search-by-keyword-v2",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-dynamic-algo-group-by-section": {
+      "get": {
+        "tags": [
+          "Dynamic Algo"
+        ],
+        "summary": "dynamic-algo-group-by-section",
+        "operationId": "dynamic-algo-group-by-section",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "User Registration",
+        "operationId": "UserRegistration",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name",
+                  "phone_no",
+                  "password",
+                  "cadre_type",
+                  "country_id",
+                  "cadre_id",
+                  "block_id",
+                  "state_id",
+                  "district_id",
+                  "health_facility_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Amisha"
+                  },
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 8460466257
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "Asd@1234"
+                  },
+                  "cadre_type": {
+                    "type": "string",
+                    "example": "National_Level"
+                  },
+                  "country_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "cadre_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 70
+                  },
+                  "block_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "state_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "district_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "health_facility_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/verified-otp": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "OTP Verification",
+        "operationId": "OTPVerification",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "otp"
+                ],
+                "type": "object",
+                "properties": {
+                  "otp": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 748962
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-user": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get User Details",
+        "operationId": "GetUserDetails",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/check-health-status": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Check health Status",
+        "operationId": "CheckhealthStatus",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          },
+          {
+            "name": "platform",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "mobile-app"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "app_version"
+                ],
+                "type": "object",
+                "properties": {
+                  "app_version": {
+                    "type": "number",
+                    "format": "double",
+                    "example": 3.6
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/update-user-details": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Update User Reocrds",
+        "operationId": "UpdateUserReocrds",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "cadre_type",
+                  "state_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "cadre_type": {
+                    "type": "string",
+                    "example": "State_Level"
+                  },
+                  "state_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 2
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-user-v3": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get user Detail V3",
+        "operationId": "GetuserDetailV3",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Login",
+        "operationId": "Login",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "phone_no",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 9033705266
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "Asd@12345"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-state": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get All State",
+        "operationId": "GetAllState",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-country": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get All Country",
+        "operationId": "GetAllCountry",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-cadre/National_Level": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get All Cadre By Type",
+        "operationId": "GetAllCadreByType",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-health-facilities": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "get-health-facilities",
+        "operationId": "get-health-facilities",
+        "parameters": [
+          {
+            "name": "health_facility",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "X_RAY,ICTC"
+            }
+          },
+          {
+            "name": "search_term",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "AN"
+            }
+          },
+          {
+            "name": "state_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "district_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 24
+            }
+          },
+          {
+            "name": "block_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 196
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "ASC"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-cadre-type": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get All Cadre Type",
+        "operationId": "GetAllCadreType",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-district-by-state/1": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get District Based on States",
+        "operationId": "GetDistrictBasedonStates",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-block-by-district/1": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get Block by District",
+        "operationId": "GetBlockbyDistrict",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-health-by-block/1": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get Halth Facility by Block",
+        "operationId": "GetHalthFacilitybyBlock",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-symptoms": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "get-all-symptoms",
+        "operationId": "get-all-symptoms",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/password-reset": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "password-reset",
+        "operationId": "password-reset",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "phone_no",
+                  "old_password",
+                  "new_password",
+                  "confirm_password"
+                ],
+                "type": "object",
+                "properties": {
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 9601720466
+                  },
+                  "old_password": {
+                    "type": "string",
+                    "example": "Asd@1234"
+                  },
+                  "new_password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1234
+                  },
+                  "confirm_password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/generate-otp": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Generate-otp",
+        "operationId": "Generate-otp",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-device-token": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Store User Device Token",
+        "operationId": "StoreUserDeviceToken",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "device_id",
+                  "notification_token"
+                ],
+                "type": "object",
+                "properties": {
+                  "device_id": {
+                    "type": "string"
+                  },
+                  "notification_token": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/forgotPassword": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "forgotPassword",
+        "operationId": "forgotPassword",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "phone_no"
+                ],
+                "type": "object",
+                "properties": {
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 8460466257
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/verified-forogot-password-otp": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "verified-forgot-password-otp",
+        "operationId": "verified-forgot-password-otp",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "otp",
+                  "new_password",
+                  "confirm_password",
+                  "temp_token"
+                ],
+                "type": "object",
+                "properties": {
+                  "otp": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 232323
+                  },
+                  "new_password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1234
+                  },
+                  "confirm_password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123
+                  },
+                  "temp_token": {
+                    "type": "string",
+                    "example": "Wt25flYoG8auAPNZhaR29DTpvKhk45aZDQUnHv8U2i88QXLmTyHuOLOESXCv"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-assessment": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get All Assessment",
+        "operationId": "GetAllAssessment",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-future-assessment": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get Future Assesment",
+        "operationId": "GetFutureAssesment",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-assessment-with-assessmentquestions/65": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get Assessment with question details",
+        "operationId": "GetAssessmentwithquestiondetails",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-past-assessment": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "get-all-past-assessment",
+        "operationId": "get-all-past-assessment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-assessment-result": {
+      "post": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Store User Assessment Result",
+        "operationId": "StoreUserAssessmentResult",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StoreUserAssessmentResultRequest"
+                  },
+                  {
+                    "example": {
+                      "assessment_id": 21,
+                      "answers": [
+                        {
+                          "question_id": 4,
+                          "answer": "option1",
+                          "is_submit": 1
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "assessment_id": 21,
+                "answers": [
+                  {
+                    "question_id": 4,
+                    "answer": "option1",
+                    "is_submit": 1
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-assessment-enrollnment": {
+      "post": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Store Assessment Enrollnment",
+        "operationId": "StoreAssessmentEnrollnment",
+        "parameters": [
+          {
+            "name": "assessment_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "response",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StoreAssessmentEnrollnmentRequest"
+                  },
+                  {
+                    "example": {
+                      "assessment_id": 21,
+                      "answers": [
+                        {
+                          "question_id": 4,
+                          "answer": "option1",
+                          "is_submit": 1
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "assessment_id": 21,
+                "answers": [
+                  {
+                    "question_id": 4,
+                    "answer": "option1",
+                    "is_submit": 1
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-subscriber-assessment-details": {
+      "post": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get Subscriber Assessment Details",
+        "operationId": "GetSubscriberAssessmentDetails",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "assessment_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "assessment_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-complete-assessment": {
+      "post": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Store Complete Asessment",
+        "operationId": "StoreCompleteAsessment",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "assessment_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "assessment_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 21
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-user-result/37": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get User Result by Assessment Id",
+        "operationId": "GetUserResultbyAssessmentId",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-activity": {
+      "post": {
+        "tags": [
+          "User Activities"
+        ],
+        "summary": "store-user-activity",
+        "operationId": "store-user-activity",
+        "parameters": [
+          {
+            "name": "platform",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "iPhone-app"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "action"
+                ],
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "example": "Resource Material Fetched"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-screening": {
+      "post": {
+        "tags": [
+          "screening"
+        ],
+        "summary": "store user screening",
+        "operationId": "storeuserscreening",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "age",
+                  "weight",
+                  "height",
+                  "symptoms_selected"
+                ],
+                "type": "object",
+                "properties": {
+                  "age": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 23
+                  },
+                  "weight": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 50
+                  },
+                  "height": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 160
+                  },
+                  "symptoms_selected": {
+                    "type": "string",
+                    "example": "1,2,3"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-chapters": {
+      "get": {
+        "tags": [
+          "CGC APIS"
+        ],
+        "summary": "get-all-chapters",
+        "operationId": "get-all-chapters",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-material/ppt": {
+      "get": {
+        "tags": [
+          "CGC APIS"
+        ],
+        "summary": "get-material/videos",
+        "operationId": "get-material/videos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-chapter-by-id/1": {
+      "get": {
+        "tags": [
+          "CGC APIS"
+        ],
+        "summary": "get-chapter-by-id",
+        "operationId": "get-chapter-by-id",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-cgc-interventions-algorithms-dependent-nodes/59": {
+      "get": {
+        "tags": [
+          "CGC APIS"
+        ],
+        "summary": "CGC Intervention",
+        "operationId": "CGCIntervention",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-diagnoses-algorithms-dependent-nodes/1": {
+      "get": {
+        "tags": [
+          "Diagnosis Algorithm"
+        ],
+        "summary": "diagnosis algorithm with master node id",
+        "operationId": "diagnosisalgorithmwithmasternodeid",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-diagnoses-algorithms-master-nodes": {
+      "get": {
+        "tags": [
+          "Diagnosis Algorithm"
+        ],
+        "summary": "diagnosis algorithm master node",
+        "operationId": "diagnosisalgorithmmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-diagnoses-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Diagnosis Algorithm"
+        ],
+        "summary": "diagnosis algorithm master node V2",
+        "operationId": "diagnosisalgorithmmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-treatment-algorithms-dependent-nodes/2": {
+      "get": {
+        "tags": [
+          "Treatment Algorithm"
+        ],
+        "summary": "treatment algorithm by master node id",
+        "operationId": "treatmentalgorithmbymasternodeid",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-treatment-algorithms-master-nodes": {
+      "get": {
+        "tags": [
+          "Treatment Algorithm"
+        ],
+        "summary": "treatment algorithm master node",
+        "operationId": "treatmentalgorithmmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-treatment-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Treatment Algorithm"
+        ],
+        "summary": "treatment algorithm master node V2",
+        "operationId": "treatmentalgorithmmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-guidance-on-adverse-drug-reactions-dependent-nodes/3": {
+      "get": {
+        "tags": [
+          "Guidance On ADR Algorithm"
+        ],
+        "summary": "guidance-on-drug-reactions by master node id",
+        "operationId": "guidance-on-drug-reactionsbymasternodeid",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-guidance-on-adverse-drug-reactions-master-nodes": {
+      "get": {
+        "tags": [
+          "Guidance On ADR Algorithm"
+        ],
+        "summary": "guidance on ADR master node",
+        "operationId": "guidanceonADRmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-guidance-on-adverse-drug-reactions-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Guidance On ADR Algorithm"
+        ],
+        "summary": "guidance on ADR master node V2",
+        "operationId": "guidanceonADRmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-case-definitions-dependent-nodes/1": {
+      "get": {
+        "tags": [
+          "Case Definition Algorithm"
+        ],
+        "summary": "case definition by master node",
+        "operationId": "casedefinitionbymasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-case-definitions-master-nodes": {
+      "get": {
+        "tags": [
+          "Case Definition Algorithm"
+        ],
+        "summary": "case definition master node",
+        "operationId": "casedefinitionmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-case-definitions-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Case Definition Algorithm"
+        ],
+        "summary": "case definition master node V2",
+        "operationId": "casedefinitionmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-latent-tb-infection-master-nodes": {
+      "get": {
+        "tags": [
+          "Latent Tb Algorithm"
+        ],
+        "summary": "latent Tb master node",
+        "operationId": "latentTbmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-latent-tb-infection-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Latent Tb Algorithm"
+        ],
+        "summary": "latent Tb master node V2",
+        "operationId": "latentTbmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-latent-tb-infection-dependent-nodes/1": {
+      "get": {
+        "tags": [
+          "Latent Tb Algorithm"
+        ],
+        "summary": "latent tb by master node id",
+        "operationId": "latenttbbymasternodeid",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-latent-tb-infection-all-nodes": {
+      "get": {
+        "tags": [
+          "Latent Tb Algorithm"
+        ],
+        "summary": "Get All Nodes of all algo",
+        "operationId": "GetAllNodesofallalgo",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-enquiry": {
+      "post": {
+        "tags": [
+          "Enquiry"
+        ],
+        "summary": "store-user-enquiry",
+        "operationId": "store-user-enquiry",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name",
+                  "email",
+                  "phone",
+                  "message",
+                  "subject"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Amisha Thakkar"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "amishathakkar77@gmail.com"
+                  },
+                  "phone": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 9427031827
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "how to access chat bot"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "example": "query to admin"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-patient-details": {
+      "post": {
+        "tags": [
+          "Patient Details"
+        ],
+        "summary": "Store Patient Details",
+        "operationId": "StorePatientDetails",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StorePatientDetailsRequest"
+                  },
+                  {
+                    "example": {
+                      "patient_details": {
+                        "nikshay_id": 1234,
+                        "patient_name": "Amisha",
+                        "age": 22,
+                        "gender": "female"
+                      },
+                      "patient_data": [
+                        {
+                          "id": "PULSE_RATE",
+                          "value": "99",
+                          "score": 1
+                        },
+                        {
+                          "id": "TEMPERATURE",
+                          "value": "99",
+                          "score": 2
+                        },
+                        {
+                          "id": "BLOOD_PRESSURE",
+                          "value": "Higher Normal (< 140/90mmHg)",
+                          "score": 1
+                        },
+                        {
+                          "id": "TEXT_HEMOPTYSIS",
+                          "value": "Yes",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_RBS",
+                          "value": "22",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_HIV",
+                          "value": "+Ve and on ART",
+                          "score": 1
+                        },
+                        {
+                          "id": "TEXT_XRAY",
+                          "value": "Consolidation",
+                          "score": 2
+                        },
+                        {
+                          "id": "COUNT_WBC",
+                          "value": "222",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_HEMOGLOBIN",
+                          "value": "2",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_ICTERUS",
+                          "value": "No",
+                          "score": 0
+                        },
+                        {
+                          "id": "TEXT_MUAC",
+                          "value": "22",
+                          "score": 0
+                        },
+                        {
+                          "id": "PEDAL_OEDEMA",
+                          "value": "Yes",
+                          "score": 1
+                        },
+                        {
+                          "id": "GENERAL_CONDITION",
+                          "value": "Conscious and normal",
+                          "score": 0
+                        },
+                        {
+                          "id": "RESPIRATORY_RATE",
+                          "value": "2",
+                          "score": 2
+                        },
+                        {
+                          "id": "OXYGEN_SATURATION",
+                          "value": "2",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_BMI",
+                          "value": "2",
+                          "score": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "patient_details": {
+                  "nikshay_id": 1234,
+                  "patient_name": "Amisha",
+                  "age": 22,
+                  "gender": "female"
+                },
+                "patient_data": [
+                  {
+                    "id": "PULSE_RATE",
+                    "value": "99",
+                    "score": 1
+                  },
+                  {
+                    "id": "TEMPERATURE",
+                    "value": "99",
+                    "score": 2
+                  },
+                  {
+                    "id": "BLOOD_PRESSURE",
+                    "value": "Higher Normal (< 140/90mmHg)",
+                    "score": 1
+                  },
+                  {
+                    "id": "TEXT_HEMOPTYSIS",
+                    "value": "Yes",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_RBS",
+                    "value": "22",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_HIV",
+                    "value": "+Ve and on ART",
+                    "score": 1
+                  },
+                  {
+                    "id": "TEXT_XRAY",
+                    "value": "Consolidation",
+                    "score": 2
+                  },
+                  {
+                    "id": "COUNT_WBC",
+                    "value": "222",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_HEMOGLOBIN",
+                    "value": "2",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_ICTERUS",
+                    "value": "No",
+                    "score": 0
+                  },
+                  {
+                    "id": "TEXT_MUAC",
+                    "value": "22",
+                    "score": 0
+                  },
+                  {
+                    "id": "PEDAL_OEDEMA",
+                    "value": "Yes",
+                    "score": 1
+                  },
+                  {
+                    "id": "GENERAL_CONDITION",
+                    "value": "Conscious and normal",
+                    "score": 0
+                  },
+                  {
+                    "id": "RESPIRATORY_RATE",
+                    "value": "2",
+                    "score": 2
+                  },
+                  {
+                    "id": "OXYGEN_SATURATION",
+                    "value": "2",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_BMI",
+                    "value": "2",
+                    "score": 3
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-dashboard-data": {
+      "get": {
+        "tags": [
+          "Basic Apis"
+        ],
+        "summary": "Get All Tv App Dashboard Data",
+        "operationId": "GetAllTvAppDashboardData",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-app-config": {
+      "get": {
+        "tags": [
+          "Basic Apis"
+        ],
+        "summary": "get-app-config",
+        "operationId": "get-app-config",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/remove-notification-token": {
+      "post": {
+        "tags": [
+          "Basic Apis"
+        ],
+        "summary": "Remove Notification token",
+        "operationId": "RemoveNotificationtoken",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "device_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "device_id": {
+                    "type": "string",
+                    "example": "9e9a113ba5e8b34f"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-differential-care-algorithms-master-nodes": {
+      "get": {
+        "tags": [
+          "Differential car Algorithm"
+        ],
+        "summary": "Differential Care Algorithm Master Node",
+        "operationId": "DifferentialCareAlgorithmMasterNode",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-differential-care-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Differential car Algorithm"
+        ],
+        "summary": "Differential Care Algorithm Master Node Copy",
+        "operationId": "DifferentialCareAlgorithmMasterNodeCopy",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-blogs": {
+      "get": {
+        "tags": [
+          "Static Blogs"
+        ],
+        "summary": "Get All Blogs",
+        "operationId": "GetAllBlogs",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-blogs-details/All You Need to Know About Tuberculosis": {
+      "get": {
+        "tags": [
+          "Static Blogs"
+        ],
+        "summary": "Get Blog Details",
+        "operationId": "GetBlogDetails",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-similar-blogs-details/All You Need to Know About Tuberculosis": {
+      "get": {
+        "tags": [
+          "Static Blogs"
+        ],
+        "summary": "Get Similar Blog Details",
+        "operationId": "GetSimilarBlogDetails",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-faq": {
+      "get": {
+        "tags": [
+          "Static FAQs"
+        ],
+        "summary": "Get All FAQs",
+        "operationId": "GetAllFAQs",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/store-static-enquiry": {
+      "post": {
+        "tags": [
+          "Static FAQs"
+        ],
+        "summary": "Store Static Enquiry",
+        "operationId": "StoreStaticEnquiry",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "email",
+                  "message",
+                  "subject"
+                ],
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "info@digiflux.io"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "what is Tuberculosis"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "example": "Tuberculosis, or TB, is an infectious disease that usually affects the lungs. It is caused by bacteria called Mycobacterium tuberculosis. TB is spread through the air from person to person."
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-dashboard-details": {
+      "get": {
+        "tags": [
+          "Static dashboard Data"
+        ],
+        "summary": "Get Dashboard Data",
+        "operationId": "GetDashboardData",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-app-config": {
+      "get": {
+        "tags": [
+          "Static App Config"
+        ],
+        "summary": "Get All App Config",
+        "operationId": "GetAllAppConfig",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-home-data": {
+      "get": {
+        "tags": [
+          "Static Home data"
+        ],
+        "summary": "Get Home Data",
+        "operationId": "GetHomeData",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-static-release": {
+      "get": {
+        "tags": [
+          "Static Release"
+        ],
+        "summary": "Get Static Release",
+        "operationId": "GetStaticRelease",
+        "parameters": [
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 5
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "id"
+            }
+          },
+          {
+            "name": "orderDirection",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "asc"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-static-modules": {
+      "get": {
+        "tags": [
+          "Static Release"
+        ],
+        "summary": "Get All Static Module",
+        "operationId": "GetAllStaticModule",
+        "parameters": [
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 5
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "id"
+            }
+          },
+          {
+            "name": "orderDirection",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "asc"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-static-modules-by-slug/Diagnostic care cascade for pediatric TB paitent and detail explanation on how it works.": {
+      "get": {
+        "tags": [
+          "Static Release"
+        ],
+        "summary": "Get Static Module By Slug",
+        "operationId": "GetStaticModuleBySlug",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-static-resource-material": {
+      "get": {
+        "tags": [
+          "Static Release"
+        ],
+        "summary": "Get All Static Resource material",
+        "operationId": "GetAllStaticResourcematerial",
+        "parameters": [
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 5
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "id"
+            }
+          },
+          {
+            "name": "orderDirection",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "asc"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-tour": {
+      "get": {
+        "tags": [
+          "Tour APIS"
+        ],
+        "summary": "Get All Tour Details",
+        "operationId": "GetAllTourDetails",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-tour-slides": {
+      "get": {
+        "tags": [
+          "Tour APIS"
+        ],
+        "summary": "Get All Tour slides",
+        "operationId": "GetAllTourslides",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/store-leaderboard-details-existing-user": {
+      "get": {
+        "tags": [
+          "Existing User Leader Board Entry Script"
+        ],
+        "summary": "Leader Board Entry",
+        "operationId": "LeaderBoardEntry",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-leaderboard-details": {
+      "get": {
+        "tags": [
+          "Existing User Leader Board Entry Script"
+        ],
+        "summary": "Get LeaderBord Details",
+        "operationId": "GetLeaderBordDetails",
+        "parameters": [
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 50
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "id"
+            }
+          },
+          {
+            "name": "orderDirection",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "asc"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-leaderboard-task-list": {
+      "get": {
+        "tags": [
+          "Existing User Leader Board Entry Script"
+        ],
+        "summary": "Get Leader Board Task List Done By Subscriber",
+        "operationId": "GetLeaderBoardTaskListDoneBySubscriber",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-leaderboard-achivements": {
+      "get": {
+        "tags": [
+          "Existing User Leader Board Entry Script"
+        ],
+        "summary": "Get Leader Board Achivements",
+        "operationId": "GetLeaderBoardAchivements",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-level-wise-badges-information": {
+      "get": {
+        "tags": [
+          "Existing User Leader Board Entry Script"
+        ],
+        "summary": "Get LeaderBoard Information",
+        "operationId": "GetLeaderBoardInformation",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/store-sub-module-usage": {
+      "post": {
+        "tags": [
+          "Existing User Leader Board Entry Script"
+        ],
+        "summary": "Store SubModule Usage",
+        "operationId": "StoreSubModuleUsage",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/StoreSubModuleUsageRequest"
+                },
+                "description": "",
+                "example": [
+                  {
+                    "module": "Guidance on ADR",
+                    "sub_module_id": 1,
+                    "time": 5,
+                    "activity_type": "submodule_usage"
+                  },
+                  {
+                    "module": "Guidance on ADR",
+                    "sub_module_id": 2,
+                    "time": 5,
+                    "activity_type": "submodule_usage"
+                  },
+                  {
+                    "module": "Case Definition",
+                    "sub_module_id": 3,
+                    "time": 5,
+                    "activity_type": "submodule_usage"
+                  },
+                  {
+                    "module": "Diagnosis Algorithm",
+                    "sub_module_id": 1,
+                    "time": 300,
+                    "activity_type": "submodule_usage"
+                  },
+                  {
+                    "module": "Treatment Algorithm",
+                    "sub_module_id": 2,
+                    "time": 300,
+                    "activity_type": "submodule_usage"
+                  },
+                  {
+                    "module": "Latent TB Infection",
+                    "sub_module_id": 1,
+                    "time": 300,
+                    "activity_type": "submodule_usage"
+                  },
+                  {
+                    "module": "Differentiated Care Of TB Patients",
+                    "sub_module_id": 1,
+                    "time": 300,
+                    "activity_type": "submodule_usage"
+                  },
+                  {
+                    "module": "NTEP Intervention",
+                    "sub_module_id": 1,
+                    "time": 300,
+                    "activity_type": "submodule_usage"
+                  }
+                ]
+              },
+              "example": [
+                {
+                  "module": "Guidance on ADR",
+                  "sub_module_id": 1,
+                  "time": 5,
+                  "activity_type": "submodule_usage"
+                },
+                {
+                  "module": "Guidance on ADR",
+                  "sub_module_id": 2,
+                  "time": 5,
+                  "activity_type": "submodule_usage"
+                },
+                {
+                  "module": "Case Definition",
+                  "sub_module_id": 3,
+                  "time": 5,
+                  "activity_type": "submodule_usage"
+                },
+                {
+                  "module": "Diagnosis Algorithm",
+                  "sub_module_id": 1,
+                  "time": 300,
+                  "activity_type": "submodule_usage"
+                },
+                {
+                  "module": "Treatment Algorithm",
+                  "sub_module_id": 2,
+                  "time": 300,
+                  "activity_type": "submodule_usage"
+                },
+                {
+                  "module": "Latent TB Infection",
+                  "sub_module_id": 1,
+                  "time": 300,
+                  "activity_type": "submodule_usage"
+                },
+                {
+                  "module": "Differentiated Care Of TB Patients",
+                  "sub_module_id": 1,
+                  "time": 300,
+                  "activity_type": "submodule_usage"
+                },
+                {
+                  "module": "NTEP Intervention",
+                  "sub_module_id": 1,
+                  "time": 300,
+                  "activity_type": "submodule_usage"
+                }
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-user-v3": {
+      "get": {
+        "tags": [
+          "Register"
+        ],
+        "summary": "Get User V3",
+        "operationId": "GetUserV3",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/update-user-details-v2": {
+      "post": {
+        "tags": [
+          "Register"
+        ],
+        "summary": "Update User Detail",
+        "operationId": "UpdateUserDetail",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "cadre_type"
+                ],
+                "type": "object",
+                "properties": {
+                  "cadre_type": {
+                    "type": "string",
+                    "example": "National_Level"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-v2": {
+      "post": {
+        "tags": [
+          "Register"
+        ],
+        "summary": "Store User V2",
+        "operationId": "StoreUserV2",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name",
+                  "phone_no",
+                  "cadre_type",
+                  "country_id",
+                  "cadre_id",
+                  "block_id",
+                  "state_id",
+                  "district_id",
+                  "health_facility_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Amisha"
+                  },
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 8460466257
+                  },
+                  "cadre_type": {
+                    "type": "string",
+                    "example": "National_Level"
+                  },
+                  "country_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "cadre_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 70
+                  },
+                  "block_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "state_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "district_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "health_facility_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-feedback-details": {
+      "get": {
+        "tags": [
+          "User Feedback"
+        ],
+        "summary": "Get Feedback Details",
+        "operationId": "GetFeedbackDetails",
+        "parameters": [
+          {
+            "name": "feedback_question_skip",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 0
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/store-feedback-details": {
+      "post": {
+        "tags": [
+          "User Feedback"
+        ],
+        "summary": "Store Feedback",
+        "operationId": "StoreFeedback",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StoreFeedbackRequest"
+                  },
+                  {
+                    "example": {
+                      "payload": {
+                        "ratings": [
+                          {
+                            "id": 4,
+                            "rating": 4,
+                            "skip": 0
+                          }
+                        ],
+                        "review": "User Friendly App UI"
+                      }
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "payload": {
+                  "ratings": [
+                    {
+                      "id": 4,
+                      "rating": 4,
+                      "skip": 0
+                    }
+                  ],
+                  "review": "User Friendly App UI"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-flash-news": {
+      "get": {
+        "tags": [
+          "Flash News"
+        ],
+        "summary": "Get All Flash News",
+        "operationId": "GetAllFlashNews",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-similar-apps": {
+      "get": {
+        "tags": [
+          "Flash News"
+        ],
+        "summary": "Get All Similar Apps",
+        "operationId": "GetAllSimilarApps",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-app-home-data": {
+      "get": {
+        "tags": [
+          "Flash News"
+        ],
+        "summary": "Get Home Data",
+        "operationId": "GetHomeData1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-module-usage": {
+      "get": {
+        "tags": [
+          "Flash News"
+        ],
+        "summary": "Get Module Usage",
+        "operationId": "GetModuleUsage",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-recently-added": {
+      "get": {
+        "tags": [
+          "Flash News"
+        ],
+        "summary": "Get recently Added Material",
+        "operationId": "GetrecentlyAddedMaterial",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-master-search": {
+      "get": {
+        "tags": [
+          "Master Search"
+        ],
+        "summary": "Master Search Data",
+        "operationId": "MasterSearchData",
+        "parameters": [
+          {
+            "name": "search_text",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "pulmonary"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-module-master-search": {
+      "get": {
+        "tags": [
+          "Master Search"
+        ],
+        "summary": "Get Module Master Search",
+        "operationId": "GetModuleMasterSearch",
+        "parameters": [
+          {
+            "name": "search_text",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-sub-module-master-search": {
+      "get": {
+        "tags": [
+          "Master Search"
+        ],
+        "summary": "Get SubModule Master Search",
+        "operationId": "GetSubModuleMasterSearch",
+        "parameters": [
+          {
+            "name": "search_text",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Extra Pulmonary"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-resource-material-master-search": {
+      "get": {
+        "tags": [
+          "Master Search"
+        ],
+        "summary": "Get Resource Material Master Search",
+        "operationId": "GetResourceMaterialMasterSearch",
+        "parameters": [
+          {
+            "name": "search_text",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-chat-question-master-search": {
+      "get": {
+        "tags": [
+          "Master Search"
+        ],
+        "summary": "Get Chat Question Master Search",
+        "operationId": "GetChatQuestionMasterSearch",
+        "parameters": [
+          {
+            "name": "search_text",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-certificates": {
+      "get": {
+        "tags": [
+          "Certificates"
+        ],
+        "summary": "Get All Certificates",
+        "operationId": "GetAllCertificates",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-certificate-pdf/5": {
+      "get": {
+        "tags": [
+          "Certificates"
+        ],
+        "summary": "Get Certificates PDF",
+        "operationId": "GetCertificatesPDF",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-set-master-node": {
+      "get": {
+        "tags": [
+          "Set Master Node ID in modules"
+        ],
+        "summary": "Set Master Node Id",
+        "operationId": "SetMasterNodeId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-case-definitions-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Algorthms APIs"
+        ],
+        "summary": "Case Definition Master Node v2",
+        "operationId": "CaseDefinitionMasterNodev2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-cgc-interventions-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Algorthms APIs"
+        ],
+        "summary": "CGC Algo Master Node v2",
+        "operationId": "CGCAlgoMasterNodev2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-diagnoses-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Algorthms APIs"
+        ],
+        "summary": "Diagnosis Algo Master Node v2",
+        "operationId": "DiagnosisAlgoMasterNodev2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-treatment-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Algorthms APIs"
+        ],
+        "summary": "Treatment Algo Master Node v2",
+        "operationId": "TreatmentAlgoMasterNodev2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-guidance-on-adverse-drug-reactions-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Algorthms APIs"
+        ],
+        "summary": "Guidance On ADR Algo Master Node v2",
+        "operationId": "GuidanceOnADRAlgoMasterNodev2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-latent-tb-infection-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Algorthms APIs"
+        ],
+        "summary": "Latent Tb Infection Algo Master Node v2",
+        "operationId": "LatentTbInfectionAlgoMasterNodev2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-differential-care-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Algorthms APIs"
+        ],
+        "summary": "Differential Care Algo Master Node v2",
+        "operationId": "DifferentialCareAlgoMasterNodev2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-dynamic-algorithms-master-nodes-v2/2": {
+      "get": {
+        "tags": [
+          "Algorthms APIs"
+        ],
+        "summary": "Dynamic Algo Master Node v2",
+        "operationId": "DynamicAlgoMasterNodev2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-past-assessment": {
+      "get": {
+        "tags": [
+          "Assessment APis"
+        ],
+        "summary": "Get All Past Assessment",
+        "operationId": "GetAllPastAssessment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-future-assessment": {
+      "get": {
+        "tags": [
+          "Assessment APis"
+        ],
+        "summary": "Get All Future Assessment s",
+        "operationId": "GetAllFutureAssessments",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-assessment-performace": {
+      "get": {
+        "tags": [
+          "Assessment APis"
+        ],
+        "summary": "Get Assessment performance",
+        "operationId": "GetAssessmentperformance",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-survey-forms": {
+      "get": {
+        "tags": [
+          "Survey Forms"
+        ],
+        "summary": "Get All Active Surveys",
+        "operationId": "GetAllActiveSurveys",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-survey-by-id/1": {
+      "get": {
+        "tags": [
+          "Survey Forms"
+        ],
+        "summary": "Get Survey questions By Survey ID",
+        "operationId": "GetSurveyquestionsBySurveyID",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/store-survey-details": {
+      "post": {
+        "tags": [
+          "Survey Forms"
+        ],
+        "summary": "Store Survey Details",
+        "operationId": "StoreSurveyDetails",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/StoreSurveyDetailsRequest"
+                },
+                "description": "",
+                "example": [
+                  {
+                    "survey_id": 1,
+                    "survey_question_id": 1,
+                    "answer": "option1"
+                  },
+                  {
+                    "survey_id": 1,
+                    "survey_question_id": 2,
+                    "answer": "No suggestion"
+                  }
+                ]
+              },
+              "example": [
+                {
+                  "survey_id": 1,
+                  "survey_question_id": 1,
+                  "answer": "option1"
+                },
+                {
+                  "survey_id": 1,
+                  "survey_question_id": 2,
+                  "answer": "No suggestion"
+                }
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/get-all-automatic-notification": {
+      "get": {
+        "tags": [
+          "Automatic Notification"
+        ],
+        "summary": "Get All Automatic Notification",
+        "operationId": "GetAllAutomaticNotification",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/script-to-update-plateform": {
+      "get": {
+        "tags": [
+          "Script For Update Plateform Details In User App Version"
+        ],
+        "summary": "New Request",
+        "operationId": "NewRequest",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Translate",
+        "operationId": "Translate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-training-tag": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "T Trainning Tag translate",
+        "operationId": "TTrainningTagtranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-chat-question": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Chat Question Translate",
+        "operationId": "ChatQuestionTranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-case-def-algo": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Case Defintion Algorithm translate",
+        "operationId": "CaseDefintionAlgorithmtranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-diagnosis-algo": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Diagnosis Algorthm Translate",
+        "operationId": "DiagnosisAlgorthmTranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-cgc-algo": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "CGC Algorithm translate",
+        "operationId": "CGCAlgorithmtranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-differential-care-algo": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Differential Care Algo translate",
+        "operationId": "DifferentialCareAlgotranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-guidance-on-adr-algo": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Guidance On ADR algo Translate",
+        "operationId": "GuidanceOnADRalgoTranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-latent-tb-algo": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Latent Tb Algo Translate",
+        "operationId": "LatentTbAlgoTranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-treatment-algo": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Treatment Algo Translate",
+        "operationId": "TreatmentAlgoTranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-app-config": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "App Config",
+        "operationId": "AppConfig",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/api/translate-screening-tool": {
+      "get": {
+        "tags": [
+          "Translation"
+        ],
+        "summary": "Screening tool Translate",
+        "operationId": "ScreeningtoolTranslate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-count-list-data": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get Count List Data",
+        "operationId": "GetCountListData",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-usage-count": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get Usage Count",
+        "operationId": "GetUsageCount",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-subscribers-count": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get Subscribers count",
+        "operationId": "GetSubscriberscount",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "overall"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-cadre-wise-subscriber-count": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get cadre wise Subscriber count",
+        "operationId": "GetcadrewiseSubscribercount",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "overall"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-module-wise-subscriber-count": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get Module Wise Subscriber",
+        "operationId": "GetModuleWiseSubscriber",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "overall"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-leaderboard-count": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get LeaderBoard Details",
+        "operationId": "GetLeaderBoardDetails",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "overall"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-chatquestion-hit-count": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get Chat Question Hit Count",
+        "operationId": "GetChatQuestionHitCount",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "last 30 days"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-chatkeyword-hit-count": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get Chat Keyword Hit Count",
+        "operationId": "GetChatKeywordHitCount",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "last 30 days"
+            }
+          },
+          {
+            "name": "state_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 21
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-user-feedback-details": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get User Feedback Detail",
+        "operationId": "GetUserFeedbackDetail",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "overall"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-assessment-submission-details": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get Assessment Submission Detail",
+        "operationId": "GetAssessmentSubmissionDetail",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "overall"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-app-opened-count": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get App Opened Count",
+        "operationId": "GetAppOpenedCount",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "monthly"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/export-leader-board": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Leader Board Export",
+        "operationId": "LeaderBoardExport",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/export-chatbot-question": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Chat QUesiron Export",
+        "operationId": "ChatQUesironExport",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/export-chatbot-keyword": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Chatbot Keyword Export",
+        "operationId": "ChatbotKeywordExport",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-role-wise-state": {
+      "get": {
+        "tags": [
+          "New Dashboard APIs"
+        ],
+        "summary": "Get role wise Admin user",
+        "operationId": "GetrolewiseAdminuser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://192.168.0.37:8000",
+            "variables": {}
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Chat-Submit-question-hitRequest": {
+        "title": "Chat-Submit-question-hitRequest",
+        "required": [
+          "question_id",
+          "subscriber_id",
+          "session_token"
+        ],
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subscriber_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "session_token": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "question_id": 1,
+          "subscriber_id": 1,
+          "session_token": "asd-asd-asd"
+        }
+      },
+      "StoreUserAssessmentResultRequest": {
+        "title": "StoreUserAssessmentResultRequest",
+        "required": [
+          "assessment_id",
+          "answers"
+        ],
+        "type": "object",
+        "properties": {
+          "assessment_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "assessment_id": 21,
+          "answers": [
+            {
+              "question_id": 4,
+              "answer": "option1",
+              "is_submit": 1
+            }
+          ]
+        }
+      },
+      "Answer": {
+        "title": "Answer",
+        "required": [
+          "question_id",
+          "answer",
+          "is_submit"
+        ],
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "answer": {
+            "type": "string"
+          },
+          "is_submit": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "question_id": 4,
+          "answer": "option1",
+          "is_submit": 1
+        }
+      },
+      "StoreAssessmentEnrollnmentRequest": {
+        "title": "StoreAssessmentEnrollnmentRequest",
+        "required": [
+          "assessment_id",
+          "answers"
+        ],
+        "type": "object",
+        "properties": {
+          "assessment_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "assessment_id": 21,
+          "answers": [
+            {
+              "question_id": 4,
+              "answer": "option1",
+              "is_submit": 1
+            }
+          ]
+        }
+      },
+      "StorePatientDetailsRequest": {
+        "title": "StorePatientDetailsRequest",
+        "required": [
+          "patient_details",
+          "patient_data"
+        ],
+        "type": "object",
+        "properties": {
+          "patient_details": {
+            "$ref": "#/components/schemas/PatientDetails"
+          },
+          "patient_data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PatientDatum"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "patient_details": {
+            "nikshay_id": 1234,
+            "patient_name": "Amisha",
+            "age": 22,
+            "gender": "female"
+          },
+          "patient_data": [
+            {
+              "id": "PULSE_RATE",
+              "value": "99",
+              "score": 1
+            },
+            {
+              "id": "TEMPERATURE",
+              "value": "99",
+              "score": 2
+            },
+            {
+              "id": "BLOOD_PRESSURE",
+              "value": "Higher Normal (< 140/90mmHg)",
+              "score": 1
+            },
+            {
+              "id": "TEXT_HEMOPTYSIS",
+              "value": "Yes",
+              "score": 3
+            },
+            {
+              "id": "TEXT_RBS",
+              "value": "22",
+              "score": 3
+            },
+            {
+              "id": "TEXT_HIV",
+              "value": "+Ve and on ART",
+              "score": 1
+            },
+            {
+              "id": "TEXT_XRAY",
+              "value": "Consolidation",
+              "score": 2
+            },
+            {
+              "id": "COUNT_WBC",
+              "value": "222",
+              "score": 3
+            },
+            {
+              "id": "TEXT_HEMOGLOBIN",
+              "value": "2",
+              "score": 3
+            },
+            {
+              "id": "TEXT_ICTERUS",
+              "value": "No",
+              "score": 0
+            },
+            {
+              "id": "TEXT_MUAC",
+              "value": "22",
+              "score": 0
+            },
+            {
+              "id": "PEDAL_OEDEMA",
+              "value": "Yes",
+              "score": 1
+            },
+            {
+              "id": "GENERAL_CONDITION",
+              "value": "Conscious and normal",
+              "score": 0
+            },
+            {
+              "id": "RESPIRATORY_RATE",
+              "value": "2",
+              "score": 2
+            },
+            {
+              "id": "OXYGEN_SATURATION",
+              "value": "2",
+              "score": 3
+            },
+            {
+              "id": "TEXT_BMI",
+              "value": "2",
+              "score": 3
+            }
+          ]
+        }
+      },
+      "PatientDetails": {
+        "title": "PatientDetails",
+        "required": [
+          "nikshay_id",
+          "patient_name",
+          "age",
+          "gender"
+        ],
+        "type": "object",
+        "properties": {
+          "nikshay_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patient_name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "nikshay_id": 1234,
+          "patient_name": "Amisha",
+          "age": 22,
+          "gender": "female"
+        }
+      },
+      "PatientDatum": {
+        "title": "PatientDatum",
+        "required": [
+          "id",
+          "value",
+          "score"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "id": "PULSE_RATE",
+          "value": "99",
+          "score": 1
+        }
+      },
+      "StoreSubModuleUsageRequest": {
+        "title": "StoreSubModuleUsageRequest",
+        "required": [
+          "module",
+          "sub_module_id",
+          "time",
+          "activity_type"
+        ],
+        "type": "object",
+        "properties": {
+          "module": {
+            "type": "string"
+          },
+          "sub_module_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activity_type": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "module": "Guidance on ADR",
+          "sub_module_id": 1,
+          "time": 5,
+          "activity_type": "submodule_usage"
+        }
+      },
+      "StoreFeedbackRequest": {
+        "title": "StoreFeedbackRequest",
+        "required": [
+          "payload"
+        ],
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/Payload"
+          }
+        },
+        "example": {
+          "payload": {
+            "ratings": [
+              {
+                "id": 4,
+                "rating": 4,
+                "skip": 0
+              }
+            ],
+            "review": "User Friendly App UI"
+          }
+        }
+      },
+      "Payload": {
+        "title": "Payload",
+        "required": [
+          "ratings",
+          "review"
+        ],
+        "type": "object",
+        "properties": {
+          "ratings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rating"
+            },
+            "description": ""
+          },
+          "review": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "ratings": [
+            {
+              "id": 4,
+              "rating": 4,
+              "skip": 0
+            }
+          ],
+          "review": "User Friendly App UI"
+        }
+      },
+      "Rating": {
+        "title": "Rating",
+        "required": [
+          "id",
+          "rating",
+          "skip"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skip": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "id": 4,
+          "rating": 4,
+          "skip": 0
+        }
+      },
+      "StoreSurveyDetailsRequest": {
+        "title": "StoreSurveyDetailsRequest",
+        "required": [
+          "survey_id",
+          "survey_question_id",
+          "answer"
+        ],
+        "type": "object",
+        "properties": {
+          "survey_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "survey_question_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "answer": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "survey_id": 1,
+          "survey_question_id": 1,
+          "answer": "option1"
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Resouorce Material"
+    },
+    {
+      "name": "Training APIs"
+    },
+    {
+      "name": "Chat Module"
+    },
+    {
+      "name": "Dynamic Algo"
+    },
+    {
+      "name": "Registration"
+    },
+    {
+      "name": "Assessment"
+    },
+    {
+      "name": "User Activities"
+    },
+    {
+      "name": "screening"
+    },
+    {
+      "name": "CGC APIS"
+    },
+    {
+      "name": "Diagnosis Algorithm"
+    },
+    {
+      "name": "Treatment Algorithm"
+    },
+    {
+      "name": "Guidance On ADR Algorithm"
+    },
+    {
+      "name": "Case Definition Algorithm"
+    },
+    {
+      "name": "Latent Tb Algorithm"
+    },
+    {
+      "name": "Enquiry"
+    },
+    {
+      "name": "Patient Details"
+    },
+    {
+      "name": "Basic Apis"
+    },
+    {
+      "name": "Differential car Algorithm"
+    },
+    {
+      "name": "Static Blogs"
+    },
+    {
+      "name": "Static FAQs"
+    },
+    {
+      "name": "Static dashboard Data"
+    },
+    {
+      "name": "Static App Config"
+    },
+    {
+      "name": "Static Home data"
+    },
+    {
+      "name": "Static Release"
+    },
+    {
+      "name": "Tour APIS"
+    },
+    {
+      "name": "Existing User Leader Board Entry Script"
+    },
+    {
+      "name": "Register"
+    },
+    {
+      "name": "User Feedback"
+    },
+    {
+      "name": "Flash News"
+    },
+    {
+      "name": "Master Search"
+    },
+    {
+      "name": "Certificates"
+    },
+    {
+      "name": "Set Master Node ID in modules"
+    },
+    {
+      "name": "Algorthms APIs"
+    },
+    {
+      "name": "Assessment APis"
+    },
+    {
+      "name": "Survey Forms"
+    },
+    {
+      "name": "Automatic Notification"
+    },
+    {
+      "name": "Script For Update Plateform Details In User App Version"
+    },
+    {
+      "name": "Translation"
+    },
+    {
+      "name": "New Dashboard APIs"
+    }
+  ]
+}

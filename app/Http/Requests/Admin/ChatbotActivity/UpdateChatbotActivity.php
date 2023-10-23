@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Http\Requests\Admin\ChatbotActivity;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
+
+class UpdateChatbotActivity extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize(): bool
+    {
+        return Gate::allows('admin.chatbot-activity.edit', $this->chatbotActivity);
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules(): array
+    {
+        return [
+            'user_id' => ['sometimes', 'integer'],
+            'action' => ['sometimes', 'string'],
+            'payload' => ['nullable', 'string'],
+            'plateform' => ['sometimes', 'string'],
+            'ip_address' => ['nullable', 'string'],
+            'tag_id' => ['nullable', 'integer'],
+            'question_id' => ['nullable', 'integer'],
+            'like' => ['nullable', 'integer'],
+            'dislike' => ['nullable', 'integer'],
+
+        ];
+    }
+
+    /**
+     * Modify input data
+     *
+     * @return array
+     */
+    public function getSanitized(): array
+    {
+        $sanitized = $this->validated();
+
+
+        //Add your code for manipulation with request data here
+
+        return $sanitized;
+    }
+}

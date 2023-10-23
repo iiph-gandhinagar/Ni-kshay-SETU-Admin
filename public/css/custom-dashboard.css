@@ -1,0 +1,335 @@
+.dashboard-card {
+    background-color: #485779 !important;
+    color: white !important;
+}
+
+.top-count-card {
+    height: 100%;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12),
+        0px 1px 3px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 11px !important;
+}
+
+.state-subscriber-card {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin:auto !important;
+    max-width: 300px;
+}
+.subscriber-card-color {
+    background-image: linear-gradient(#9c1626, #e74c5e);
+}
+
+.enquiry-card-color {
+    background-image: linear-gradient(#0e7177, #28bac3);
+}
+
+.assessemnt-card-color {
+    background-image: linear-gradient(#0f5b92, #53a7e4);
+}
+
+.widget-chat-wrapper-outer {
+    border: 3px solid #30a9b8;
+}
+
+.cus-border-top {
+    border-top: 4px solid #30a9b8 !important;
+}
+
+.heading {
+    text-align: center;
+    font-family: inherit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: black;
+}
+
+tbody {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+}
+
+.line-chart {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    padding-left: 15px;
+}
+
+.cadre-chart {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    padding-left: 15px;
+}
+
+.table-listing-design {
+    padding: 1rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.scrollbar {
+    max-height: 595px;
+    overflow-y: auto;
+}
+
+.table-listing-design td {
+    display: table-cell !important;
+    line-height: 20px;
+}
+
+.question-hits-scroll {
+    padding: 1rem;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.text-content {
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+}
+
+.text-right-content {
+    font-size: 15px;
+    text-align: left;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.min-height {
+    min-height: 645px !important;
+    /* max-height:800px !important; */
+}
+
+.min-height-assessment-cadre {
+    min-height: 460px !important;
+    /* max-height: 460px !important; */
+}
+
+.min-height-chart {
+    min-height: 480px !important;
+}
+
+.min-height-module {
+    min-height: 460px !important;
+    /* max-height: 460px !important; */
+}
+
+.min-height-chat {
+    min-height: 485px !important;
+}
+
+#dou-chart {
+    max-height: 500px;
+}
+
+/* .table-listing thead th { 
+    position: sticky; 
+    margin-top: 0;
+    z-index: 1; 
+    background-color: #2fcbd3;
+    height:50px;
+    top:0
+} */
+
+.total-count {
+    /* font-family: sans-serif;
+    font-size: 16px !important;
+    line-height: 16px;
+    font-weight: 600;
+    color: #30a9b8;
+    float: right; */
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.15000000596046448px;
+    /* text-align: center; */
+    color: black;
+}
+.box-text-color {
+    /* color: #30a9b8;
+    font-family: sans-serif;
+    font-size: 14px !important;
+    font-weight: 600;
+    line-height: 16px;
+    float: left; */
+    color: #0f757b;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.15000000596046448px;
+    text-align: center;
+}
+
+/* #legend {
+    padding-left: 25px;
+} */
+
+.legend-display {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-around !important;
+}
+
+[class$="-legend"] {
+    list-style: none;
+    cursor: pointer;
+    /* padding-left: 120px; */
+    columns: 2;
+    margin-top: 35px;
+}
+
+[class$="-legend"] li {
+    padding: 0 5px;
+}
+
+[class$="-legend"] li.line-through {
+    text-decoration: line-through;
+}
+
+[class$="-legend"] li span {
+    border-radius: 5px;
+    display: inline-block;
+    height: 10px;
+    margin-right: 10px;
+    width: 10px;
+}
+
+#module ul li {
+    /* padding: 10px 0 10px 20px; */
+    text-indent: -1.5em;
+}
+
+#legend ul li {
+    text-indent: -1.5em;
+}
+
+.row.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row.display-flex > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.height-100 {
+    height: 100% !important;
+}
+
+.custom-card-border {
+    border-radius: 5px !important;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 3px rgba(0, 0, 0, 0.15) !important;
+}
+
+.filter-border {
+    border-radius: 9px !important;
+}
+
+.export-data {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+h4.export-data {
+    text-align: center;
+}
+a.export-data {
+    position: absolute;
+    display: flex;
+    right: 0;
+}
+
+.export-icon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    /* background-color:#30AAB9 !important; */
+    font-size: 25px;
+    color:#30a9b8 !important;
+}
+
+.count-font {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+}
+
+.count-total {
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: left;
+}
+
+.icon-position {
+    position: relative;
+    left: 6.14%;
+    right: 7.14%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.back-icon {
+    font-size: 25px !important;
+}
+
+#button {
+    display: inline-block;
+    background-color:#30a9b8;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 100px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 46px;
+    color: #fff;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: #24a5b6;
+  }
+  #button:active {
+    background-color: #24a5b6;
+  }
+  #button.show {
+    opacity: 0.8;
+    visibility: visible;
+  }

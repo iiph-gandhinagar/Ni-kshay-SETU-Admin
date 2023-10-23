@@ -1,0 +1,3767 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TB-Backend",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/api",
+      "variables": {}
+    },
+    {
+      "url": "http://192.168.0.114:8000/api",
+      "variables": {}
+    },
+    {
+      "url": "https://tbapp.srcicds-iiphg.org/api/search-by-keyword-v2",
+      "variables": {}
+    },
+    {
+      "url": "http://localhost:8001/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/get-root-folders": {
+      "get": {
+        "tags": [
+          "Resouorce Material"
+        ],
+        "summary": "Get root folders",
+        "operationId": "Getrootfolders",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-files-by-parent/58": {
+      "get": {
+        "tags": [
+          "Resouorce Material"
+        ],
+        "summary": "Get files by parentId",
+        "operationId": "GetfilesbyparentId",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "name"
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-tag-with-master-data": {
+      "get": {
+        "tags": [
+          "Training APIs"
+        ],
+        "summary": "get-tag-with-master-data",
+        "operationId": "get-tag-with-master-data",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-tags": {
+      "get": {
+        "tags": [
+          "Training APIs"
+        ],
+        "summary": "get-all-tags",
+        "operationId": "get-all-tags",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "+8Wx6KSSxjuHB4SBDNP+lHqmNgcA7L6B8K8Vlo0Tf6fkidH8kThAI3q28lKl9m9L"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/submit-feedback": {
+      "post": {
+        "tags": [
+          "Training APIs"
+        ],
+        "summary": "submit-feedback",
+        "operationId": "submit-feedback",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "activity_id",
+                  "question_id",
+                  "tag_id",
+                  "like",
+                  "dislike"
+                ],
+                "type": "object",
+                "properties": {
+                  "activity_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 3
+                  },
+                  "question_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "tag_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "like": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "dislike": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://192.168.0.114:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-text-to-speech": {
+      "post": {
+        "tags": [
+          "Training APIs"
+        ],
+        "summary": "get-text-to-speech",
+        "operationId": "get-text-to-speech",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "text"
+                ],
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "example": "<p>&bull;&nbsp;&nbsp; &nbsp;Recheck the dose of drugs&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;Exclude all other causes of symptoms&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;Estimate the severity of the adverse effects&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;Document the adverse effects&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;The offending drugs may need to be stopped (if the severity is more) and to be reintroduced gradually when the symptoms disappear&nbsp;<br />\\n&nbsp;</p>"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-keywords": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Get-keywords",
+        "operationId": "Chat-Get-keywords",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/search-by-keyword-v2": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Search-by-keyword-v2",
+        "operationId": "Chat-Search-by-keyword-v2",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Presumptive Pulmonary TB"
+            }
+          },
+          {
+            "name": "NTEP",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/submit-question-hit": {
+      "post": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Submit-question-hit",
+        "operationId": "Chat-Submit-question-hit",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Chat-Submit-question-hitRequest"
+                  },
+                  {
+                    "example": {
+                      "question_id": 1,
+                      "subscriber_id": 1,
+                      "session_token": "asd-asd-asd"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "question_id": 1,
+                "subscriber_id": 1,
+                "session_token": "asd-asd-asd"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-questions-by-keyword": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Get-questions-by-keyword",
+        "operationId": "Chat-Get-questions-by-keyword",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-questions-by-keyword-v2/1": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Get-questions-by-keyword-v2",
+        "operationId": "Chat-Get-questions-by-keyword-v2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-questions-by-keyword-v3/1": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Chat - Get-questions-by-keyword-v3",
+        "operationId": "Chat-Get-questions-by-keyword-v3",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/search-by-keyword/FDC": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "search-by-keyword/tuberculosis",
+        "operationId": "search-by-keyword/tuberculosis",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/hi": {
+      "get": {
+        "tags": [
+          "Chat Module"
+        ],
+        "summary": "Search by keyword V2",
+        "operationId": "SearchbykeywordV2",
+        "parameters": [
+          {
+            "name": "session_token",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "1-2022-03-25T09:23:00.877Z"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://tbapp.srcicds-iiphg.org/api/search-by-keyword-v2",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-dynamic-algo-group-by-section": {
+      "get": {
+        "tags": [
+          "Dynamic Algo"
+        ],
+        "summary": "dynamic-algo-group-by-section",
+        "operationId": "dynamic-algo-group-by-section",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "User Registration",
+        "operationId": "UserRegistration",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name",
+                  "phone_no",
+                  "password",
+                  "cadre_type",
+                  "country_id",
+                  "cadre_id",
+                  "block_id",
+                  "state_id",
+                  "district_id",
+                  "health_facility_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Amisha"
+                  },
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 8460466257
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "Asd@1234"
+                  },
+                  "cadre_type": {
+                    "type": "string",
+                    "example": "National_Level"
+                  },
+                  "country_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  },
+                  "cadre_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 70
+                  },
+                  "block_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "state_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "district_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  },
+                  "health_facility_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 0
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/verified-otp": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "OTP Verification",
+        "operationId": "OTPVerification",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "otp"
+                ],
+                "type": "object",
+                "properties": {
+                  "otp": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 748962
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-user": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get User Details",
+        "operationId": "GetUserDetails",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/check-health-status": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Check health Status",
+        "operationId": "CheckhealthStatus",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          },
+          {
+            "name": "platform",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "mobile-app"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "app_version"
+                ],
+                "type": "object",
+                "properties": {
+                  "app_version": {
+                    "type": "number",
+                    "format": "double",
+                    "example": 3.6
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/update-user-details": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Update User Reocrds",
+        "operationId": "UpdateUserReocrds",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "cadre_type",
+                  "state_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "cadre_type": {
+                    "type": "string",
+                    "example": "State_Level"
+                  },
+                  "state_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 2
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-user-v3": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get user Detail V3",
+        "operationId": "GetuserDetailV3",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Login",
+        "operationId": "Login",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "phone_no",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 9033705266
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "Asd@12345"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-state": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get All State",
+        "operationId": "GetAllState",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-country": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get All Country",
+        "operationId": "GetAllCountry",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-cadre/National_Level": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get All Cadre By Type",
+        "operationId": "GetAllCadreByType",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-health-facilities": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "get-health-facilities",
+        "operationId": "get-health-facilities",
+        "parameters": [
+          {
+            "name": "health_facility",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "X_RAY,ICTC"
+            }
+          },
+          {
+            "name": "search_term",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "AN"
+            }
+          },
+          {
+            "name": "state_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "district_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 24
+            }
+          },
+          {
+            "name": "block_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 196
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "ASC"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-cadre-type": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get All Cadre Type",
+        "operationId": "GetAllCadreType",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-district-by-state/1": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get District Based on States",
+        "operationId": "GetDistrictBasedonStates",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-block-by-district/1": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get Block by District",
+        "operationId": "GetBlockbyDistrict",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-health-by-block/1": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Get Halth Facility by Block",
+        "operationId": "GetHalthFacilitybyBlock",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-symptoms": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "get-all-symptoms",
+        "operationId": "get-all-symptoms",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/password-reset": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "password-reset",
+        "operationId": "password-reset",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "phone_no",
+                  "old_password",
+                  "new_password",
+                  "confirm_password"
+                ],
+                "type": "object",
+                "properties": {
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 9601720466
+                  },
+                  "old_password": {
+                    "type": "string",
+                    "example": "Asd@1234"
+                  },
+                  "new_password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1234
+                  },
+                  "confirm_password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/generate-otp": {
+      "get": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Generate-otp",
+        "operationId": "Generate-otp",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-device-token": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "Store User Device Token",
+        "operationId": "StoreUserDeviceToken",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "device_id",
+                  "notification_token"
+                ],
+                "type": "object",
+                "properties": {
+                  "device_id": {
+                    "type": "string"
+                  },
+                  "notification_token": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/forgotPassword": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "forgotPassword",
+        "operationId": "forgotPassword",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "phone_no"
+                ],
+                "type": "object",
+                "properties": {
+                  "phone_no": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 8460466257
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/verified-forogot-password-otp": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "summary": "verified-forgot-password-otp",
+        "operationId": "verified-forgot-password-otp",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "otp",
+                  "new_password",
+                  "confirm_password",
+                  "temp_token"
+                ],
+                "type": "object",
+                "properties": {
+                  "otp": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 232323
+                  },
+                  "new_password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1234
+                  },
+                  "confirm_password": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123
+                  },
+                  "temp_token": {
+                    "type": "string",
+                    "example": "Wt25flYoG8auAPNZhaR29DTpvKhk45aZDQUnHv8U2i88QXLmTyHuOLOESXCv"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-assessment": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get All Assessment",
+        "operationId": "GetAllAssessment",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-future-assessment": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get Future Assesment",
+        "operationId": "GetFutureAssesment",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-assessment-with-assessmentquestions/65": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get Assessment with question details",
+        "operationId": "GetAssessmentwithquestiondetails",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-past-assessment": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "get-all-past-assessment",
+        "operationId": "get-all-past-assessment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-assessment-result": {
+      "post": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Store User Assessment Result",
+        "operationId": "StoreUserAssessmentResult",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StoreUserAssessmentResultRequest"
+                  },
+                  {
+                    "example": {
+                      "assessment_id": 21,
+                      "answers": [
+                        {
+                          "question_id": 4,
+                          "answer": "option1",
+                          "is_submit": 1
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "assessment_id": 21,
+                "answers": [
+                  {
+                    "question_id": 4,
+                    "answer": "option1",
+                    "is_submit": 1
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-assessment-enrollnment": {
+      "post": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Store Assessment Enrollnment",
+        "operationId": "StoreAssessmentEnrollnment",
+        "parameters": [
+          {
+            "name": "assessment_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "response",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StoreAssessmentEnrollnmentRequest"
+                  },
+                  {
+                    "example": {
+                      "assessment_id": 21,
+                      "answers": [
+                        {
+                          "question_id": 4,
+                          "answer": "option1",
+                          "is_submit": 1
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "assessment_id": 21,
+                "answers": [
+                  {
+                    "question_id": 4,
+                    "answer": "option1",
+                    "is_submit": 1
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-subscriber-assessment-details": {
+      "post": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get Subscriber Assessment Details",
+        "operationId": "GetSubscriberAssessmentDetails",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "assessment_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "assessment_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-complete-assessment": {
+      "post": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Store Complete Asessment",
+        "operationId": "StoreCompleteAsessment",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "assessment_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "assessment_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 21
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-user-result/37": {
+      "get": {
+        "tags": [
+          "Assessment"
+        ],
+        "summary": "Get User Result by Assessment Id",
+        "operationId": "GetUserResultbyAssessmentId",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-activity": {
+      "post": {
+        "tags": [
+          "User Activities"
+        ],
+        "summary": "store-user-activity",
+        "operationId": "store-user-activity",
+        "parameters": [
+          {
+            "name": "platform",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "iPhone-app"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "action"
+                ],
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "example": "Resource Material Fetched"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-screening": {
+      "post": {
+        "tags": [
+          "screening"
+        ],
+        "summary": "store user screening",
+        "operationId": "storeuserscreening",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "age",
+                  "weight",
+                  "height",
+                  "symptoms_selected"
+                ],
+                "type": "object",
+                "properties": {
+                  "age": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 23
+                  },
+                  "weight": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 50
+                  },
+                  "height": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 160
+                  },
+                  "symptoms_selected": {
+                    "type": "string",
+                    "example": "1,2,3"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-chapters": {
+      "get": {
+        "tags": [
+          "CGC APIS"
+        ],
+        "summary": "get-all-chapters",
+        "operationId": "get-all-chapters",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-material/ppt": {
+      "get": {
+        "tags": [
+          "CGC APIS"
+        ],
+        "summary": "get-material/videos",
+        "operationId": "get-material/videos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-chapter-by-id/1": {
+      "get": {
+        "tags": [
+          "CGC APIS"
+        ],
+        "summary": "get-chapter-by-id",
+        "operationId": "get-chapter-by-id",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-cgc-interventions-algorithms-dependent-nodes/59": {
+      "get": {
+        "tags": [
+          "CGC APIS"
+        ],
+        "summary": "CGC Intervention",
+        "operationId": "CGCIntervention",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-diagnoses-algorithms-dependent-nodes/1": {
+      "get": {
+        "tags": [
+          "Diagnosis Algorithm"
+        ],
+        "summary": "diagnosis algorithm with master node id",
+        "operationId": "diagnosisalgorithmwithmasternodeid",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-diagnoses-algorithms-master-nodes": {
+      "get": {
+        "tags": [
+          "Diagnosis Algorithm"
+        ],
+        "summary": "diagnosis algorithm master node",
+        "operationId": "diagnosisalgorithmmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-diagnoses-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Diagnosis Algorithm"
+        ],
+        "summary": "diagnosis algorithm master node V2",
+        "operationId": "diagnosisalgorithmmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-treatment-algorithms-dependent-nodes/2": {
+      "get": {
+        "tags": [
+          "Treatment Algorithm"
+        ],
+        "summary": "treatment algorithm by master node id",
+        "operationId": "treatmentalgorithmbymasternodeid",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-treatment-algorithms-master-nodes": {
+      "get": {
+        "tags": [
+          "Treatment Algorithm"
+        ],
+        "summary": "treatment algorithm master node",
+        "operationId": "treatmentalgorithmmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-treatment-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Treatment Algorithm"
+        ],
+        "summary": "treatment algorithm master node V2",
+        "operationId": "treatmentalgorithmmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-guidance-on-adverse-drug-reactions-dependent-nodes/3": {
+      "get": {
+        "tags": [
+          "Guidance On ADR Algorithm"
+        ],
+        "summary": "guidance-on-drug-reactions by master node id",
+        "operationId": "guidance-on-drug-reactionsbymasternodeid",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-guidance-on-adverse-drug-reactions-master-nodes": {
+      "get": {
+        "tags": [
+          "Guidance On ADR Algorithm"
+        ],
+        "summary": "guidance on ADR master node",
+        "operationId": "guidanceonADRmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-guidance-on-adverse-drug-reactions-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Guidance On ADR Algorithm"
+        ],
+        "summary": "guidance on ADR master node V2",
+        "operationId": "guidanceonADRmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-case-definitions-dependent-nodes/1": {
+      "get": {
+        "tags": [
+          "Case Definition Algorithm"
+        ],
+        "summary": "case definition by master node",
+        "operationId": "casedefinitionbymasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-case-definitions-master-nodes": {
+      "get": {
+        "tags": [
+          "Case Definition Algorithm"
+        ],
+        "summary": "case definition master node",
+        "operationId": "casedefinitionmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-case-definitions-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Case Definition Algorithm"
+        ],
+        "summary": "case definition master node V2",
+        "operationId": "casedefinitionmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-latent-tb-infection-master-nodes": {
+      "get": {
+        "tags": [
+          "Latent Tb Algorithm"
+        ],
+        "summary": "latent Tb master node",
+        "operationId": "latentTbmasternode",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-latent-tb-infection-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Latent Tb Algorithm"
+        ],
+        "summary": "latent Tb master node V2",
+        "operationId": "latentTbmasternodeV2",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-latent-tb-infection-dependent-nodes/1": {
+      "get": {
+        "tags": [
+          "Latent Tb Algorithm"
+        ],
+        "summary": "latent tb by master node id",
+        "operationId": "latenttbbymasternodeid",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-latent-tb-infection-all-nodes": {
+      "get": {
+        "tags": [
+          "Latent Tb Algorithm"
+        ],
+        "summary": "Get All Nodes of all algo",
+        "operationId": "GetAllNodesofallalgo",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-user-enquiry": {
+      "post": {
+        "tags": [
+          "Enquiry"
+        ],
+        "summary": "store-user-enquiry",
+        "operationId": "store-user-enquiry",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name",
+                  "email",
+                  "phone",
+                  "message",
+                  "subject"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Amisha Thakkar"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "amishathakkar77@gmail.com"
+                  },
+                  "phone": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 9427031827
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "how to access chat bot"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "example": "query to admin"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/store-patient-details": {
+      "post": {
+        "tags": [
+          "Patient Details"
+        ],
+        "summary": "Store Patient Details",
+        "operationId": "StorePatientDetails",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/StorePatientDetailsRequest"
+                  },
+                  {
+                    "example": {
+                      "patient_details": {
+                        "nikshay_id": 1234,
+                        "patient_name": "Amisha",
+                        "age": 22,
+                        "gender": "female"
+                      },
+                      "patient_data": [
+                        {
+                          "id": "PULSE_RATE",
+                          "value": "99",
+                          "score": 1
+                        },
+                        {
+                          "id": "TEMPERATURE",
+                          "value": "99",
+                          "score": 2
+                        },
+                        {
+                          "id": "BLOOD_PRESSURE",
+                          "value": "Higher Normal (< 140/90mmHg)",
+                          "score": 1
+                        },
+                        {
+                          "id": "TEXT_HEMOPTYSIS",
+                          "value": "Yes",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_RBS",
+                          "value": "22",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_HIV",
+                          "value": "+Ve and on ART",
+                          "score": 1
+                        },
+                        {
+                          "id": "TEXT_XRAY",
+                          "value": "Consolidation",
+                          "score": 2
+                        },
+                        {
+                          "id": "COUNT_WBC",
+                          "value": "222",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_HEMOGLOBIN",
+                          "value": "2",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_ICTERUS",
+                          "value": "No",
+                          "score": 0
+                        },
+                        {
+                          "id": "TEXT_MUAC",
+                          "value": "22",
+                          "score": 0
+                        },
+                        {
+                          "id": "PEDAL_OEDEMA",
+                          "value": "Yes",
+                          "score": 1
+                        },
+                        {
+                          "id": "GENERAL_CONDITION",
+                          "value": "Conscious and normal",
+                          "score": 0
+                        },
+                        {
+                          "id": "RESPIRATORY_RATE",
+                          "value": "2",
+                          "score": 2
+                        },
+                        {
+                          "id": "OXYGEN_SATURATION",
+                          "value": "2",
+                          "score": 3
+                        },
+                        {
+                          "id": "TEXT_BMI",
+                          "value": "2",
+                          "score": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "patient_details": {
+                  "nikshay_id": 1234,
+                  "patient_name": "Amisha",
+                  "age": 22,
+                  "gender": "female"
+                },
+                "patient_data": [
+                  {
+                    "id": "PULSE_RATE",
+                    "value": "99",
+                    "score": 1
+                  },
+                  {
+                    "id": "TEMPERATURE",
+                    "value": "99",
+                    "score": 2
+                  },
+                  {
+                    "id": "BLOOD_PRESSURE",
+                    "value": "Higher Normal (< 140/90mmHg)",
+                    "score": 1
+                  },
+                  {
+                    "id": "TEXT_HEMOPTYSIS",
+                    "value": "Yes",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_RBS",
+                    "value": "22",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_HIV",
+                    "value": "+Ve and on ART",
+                    "score": 1
+                  },
+                  {
+                    "id": "TEXT_XRAY",
+                    "value": "Consolidation",
+                    "score": 2
+                  },
+                  {
+                    "id": "COUNT_WBC",
+                    "value": "222",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_HEMOGLOBIN",
+                    "value": "2",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_ICTERUS",
+                    "value": "No",
+                    "score": 0
+                  },
+                  {
+                    "id": "TEXT_MUAC",
+                    "value": "22",
+                    "score": 0
+                  },
+                  {
+                    "id": "PEDAL_OEDEMA",
+                    "value": "Yes",
+                    "score": 1
+                  },
+                  {
+                    "id": "GENERAL_CONDITION",
+                    "value": "Conscious and normal",
+                    "score": 0
+                  },
+                  {
+                    "id": "RESPIRATORY_RATE",
+                    "value": "2",
+                    "score": 2
+                  },
+                  {
+                    "id": "OXYGEN_SATURATION",
+                    "value": "2",
+                    "score": 3
+                  },
+                  {
+                    "id": "TEXT_BMI",
+                    "value": "2",
+                    "score": 3
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-all-dashboard-data": {
+      "get": {
+        "tags": [
+          "Basic Apis"
+        ],
+        "summary": "Get All Tv App Dashboard Data",
+        "operationId": "GetAllTvAppDashboardData",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-app-config": {
+      "get": {
+        "tags": [
+          "Basic Apis"
+        ],
+        "summary": "get-app-config",
+        "operationId": "get-app-config",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "hi"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/remove-notification-token": {
+      "post": {
+        "tags": [
+          "Basic Apis"
+        ],
+        "summary": "Remove Notification token",
+        "operationId": "RemoveNotificationtoken",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "device_id"
+                ],
+                "type": "object",
+                "properties": {
+                  "device_id": {
+                    "type": "string",
+                    "example": "9e9a113ba5e8b34f"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://localhost:8001/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-differential-care-algorithms-master-nodes": {
+      "get": {
+        "tags": [
+          "Differential car Algorithm"
+        ],
+        "summary": "Differential Care Algorithm Master Node",
+        "operationId": "DifferentialCareAlgorithmMasterNode",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/get-differential-care-algorithms-master-nodes-v2": {
+      "get": {
+        "tags": [
+          "Differential car Algorithm"
+        ],
+        "summary": "Differential Care Algorithm Master Node Copy",
+        "operationId": "DifferentialCareAlgorithmMasterNodeCopy",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:8000/api",
+            "variables": {}
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Chat-Submit-question-hitRequest": {
+        "title": "Chat-Submit-question-hitRequest",
+        "required": [
+          "question_id",
+          "subscriber_id",
+          "session_token"
+        ],
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subscriber_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "session_token": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "question_id": 1,
+          "subscriber_id": 1,
+          "session_token": "asd-asd-asd"
+        }
+      },
+      "StoreUserAssessmentResultRequest": {
+        "title": "StoreUserAssessmentResultRequest",
+        "required": [
+          "assessment_id",
+          "answers"
+        ],
+        "type": "object",
+        "properties": {
+          "assessment_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "assessment_id": 21,
+          "answers": [
+            {
+              "question_id": 4,
+              "answer": "option1",
+              "is_submit": 1
+            }
+          ]
+        }
+      },
+      "Answer": {
+        "title": "Answer",
+        "required": [
+          "question_id",
+          "answer",
+          "is_submit"
+        ],
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "answer": {
+            "type": "string"
+          },
+          "is_submit": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "question_id": 4,
+          "answer": "option1",
+          "is_submit": 1
+        }
+      },
+      "StoreAssessmentEnrollnmentRequest": {
+        "title": "StoreAssessmentEnrollnmentRequest",
+        "required": [
+          "assessment_id",
+          "answers"
+        ],
+        "type": "object",
+        "properties": {
+          "assessment_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "assessment_id": 21,
+          "answers": [
+            {
+              "question_id": 4,
+              "answer": "option1",
+              "is_submit": 1
+            }
+          ]
+        }
+      },
+      "StorePatientDetailsRequest": {
+        "title": "StorePatientDetailsRequest",
+        "required": [
+          "patient_details",
+          "patient_data"
+        ],
+        "type": "object",
+        "properties": {
+          "patient_details": {
+            "$ref": "#/components/schemas/PatientDetails"
+          },
+          "patient_data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PatientDatum"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "patient_details": {
+            "nikshay_id": 1234,
+            "patient_name": "Amisha",
+            "age": 22,
+            "gender": "female"
+          },
+          "patient_data": [
+            {
+              "id": "PULSE_RATE",
+              "value": "99",
+              "score": 1
+            },
+            {
+              "id": "TEMPERATURE",
+              "value": "99",
+              "score": 2
+            },
+            {
+              "id": "BLOOD_PRESSURE",
+              "value": "Higher Normal (< 140/90mmHg)",
+              "score": 1
+            },
+            {
+              "id": "TEXT_HEMOPTYSIS",
+              "value": "Yes",
+              "score": 3
+            },
+            {
+              "id": "TEXT_RBS",
+              "value": "22",
+              "score": 3
+            },
+            {
+              "id": "TEXT_HIV",
+              "value": "+Ve and on ART",
+              "score": 1
+            },
+            {
+              "id": "TEXT_XRAY",
+              "value": "Consolidation",
+              "score": 2
+            },
+            {
+              "id": "COUNT_WBC",
+              "value": "222",
+              "score": 3
+            },
+            {
+              "id": "TEXT_HEMOGLOBIN",
+              "value": "2",
+              "score": 3
+            },
+            {
+              "id": "TEXT_ICTERUS",
+              "value": "No",
+              "score": 0
+            },
+            {
+              "id": "TEXT_MUAC",
+              "value": "22",
+              "score": 0
+            },
+            {
+              "id": "PEDAL_OEDEMA",
+              "value": "Yes",
+              "score": 1
+            },
+            {
+              "id": "GENERAL_CONDITION",
+              "value": "Conscious and normal",
+              "score": 0
+            },
+            {
+              "id": "RESPIRATORY_RATE",
+              "value": "2",
+              "score": 2
+            },
+            {
+              "id": "OXYGEN_SATURATION",
+              "value": "2",
+              "score": 3
+            },
+            {
+              "id": "TEXT_BMI",
+              "value": "2",
+              "score": 3
+            }
+          ]
+        }
+      },
+      "PatientDetails": {
+        "title": "PatientDetails",
+        "required": [
+          "nikshay_id",
+          "patient_name",
+          "age",
+          "gender"
+        ],
+        "type": "object",
+        "properties": {
+          "nikshay_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "patient_name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "nikshay_id": 1234,
+          "patient_name": "Amisha",
+          "age": 22,
+          "gender": "female"
+        }
+      },
+      "PatientDatum": {
+        "title": "PatientDatum",
+        "required": [
+          "id",
+          "value",
+          "score"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "id": "PULSE_RATE",
+          "value": "99",
+          "score": 1
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Resouorce Material"
+    },
+    {
+      "name": "Training APIs"
+    },
+    {
+      "name": "Chat Module"
+    },
+    {
+      "name": "Dynamic Algo"
+    },
+    {
+      "name": "Registration"
+    },
+    {
+      "name": "Assessment"
+    },
+    {
+      "name": "User Activities"
+    },
+    {
+      "name": "screening"
+    },
+    {
+      "name": "CGC APIS"
+    },
+    {
+      "name": "Diagnosis Algorithm"
+    },
+    {
+      "name": "Treatment Algorithm"
+    },
+    {
+      "name": "Guidance On ADR Algorithm"
+    },
+    {
+      "name": "Case Definition Algorithm"
+    },
+    {
+      "name": "Latent Tb Algorithm"
+    },
+    {
+      "name": "Enquiry"
+    },
+    {
+      "name": "Patient Details"
+    },
+    {
+      "name": "Basic Apis"
+    },
+    {
+      "name": "Differential car Algorithm"
+    }
+  ]
+}

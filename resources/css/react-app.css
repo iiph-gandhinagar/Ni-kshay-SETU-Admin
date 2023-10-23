@@ -1,0 +1,482 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.react-date-picker__wrapper,
+.react-daterange-picker__wrapper {
+  border: none !important;
+}
+
+.react-datepicker__close-icon {
+  right: 9px;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  background-color: #ffffff; 
+}
+.navbar.fixed {
+  background-color: white;
+  position: sticky;
+  transition:.3s ease-in-out;
+}
+
+.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 7px 115px;
+  z-index: 999;
+  /*-webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);*/
+  /*box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);*/
+  background-color: #ffffff !important;
+  -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+
+.font-family-Nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+.lh-34 {
+  line-height: 34px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  color: #100F0F;
+  line-height: 34px;
+}
+
+.message-text {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #808080;
+  font-style: italic;
+}
+
+.logo-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  color: #100F0F;
+  line-height: 39px;
+}
+
+.card-tag {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  background: #5584AC;
+  line-height: 24px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+
+/* Font Family and Colors */
+
+.fs-16-Nunito {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+}
+
+.fs-12-Raleway {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.fs-16-Raleway {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+.color-353535 {
+  color: #353535;
+}
+
+.color-22577E {
+  color: #22577E;
+}
+
+.color-5584AC {
+  color: #5584AC;
+}
+
+.br-7 {
+  border-radius: 7px;
+}
+
+/* Buttons */
+.btn-green {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  background: #0D9488;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+.btn-white {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #707070;
+  border-color: #DFDEDE;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+.btn-apply {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  background: #5584AC;
+  border: none;
+  padding: 12px;
+  width: 121px;
+  border-radius: 5px;
+}
+
+.btn-out-apply {
+  font-family: "Raleway", sans-serif;
+  color: #5584AC;
+  border: 1px solid #5584AC !important;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  width: 121px;
+  text-decoration: underline;
+}
+
+.btn-out-apply:hover {
+  background-color: #808080 !important;
+}
+
+/* width */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F5F5F5;
+  border-radius: 10px;
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #8080809e;
+}
+
+/* Card */
+.card {
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card-header,
+.card-footer {
+  border-color: #ebeef4;
+  background-color: #fff;
+  color: #798eb3;
+  padding: 15px;
+}
+
+.card-title {
+  padding: 20px 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #012970;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-title span {
+  color: #899bbd;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card-body {
+  padding: 22px 15px;
+}
+
+.chatbot-usage-card {
+  background: linear-gradient(260.75deg, rgba(248, 255, 172, 0.4) 26.36%, rgba(255, 252, 248, 0) 81.08%), #FFFFFF;
+}
+
+.resource-material-usage-card {
+  background: linear-gradient(260.75deg, rgba(217, 194, 255, 0.4) 19.35%, rgba(255, 252, 248, 0) 81.08%), #FFFFFF;
+}
+
+.users-card {
+  background: linear-gradient(260.75deg, rgba(255, 227, 172, 0.4) 19.35%, rgba(255, 252, 248, 0) 81.08%), #FFFFFF;
+}
+
+.info-card .card-body h5 {
+  font-family: 'Nunito', sans-serif;
+  color: #424242;
+}
+
+.info-card .card-body span {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  color: #22577E;
+}
+
+.area-chart {
+  width: 100%;
+  height: 130px;
+}
+
+.area-chart-container {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-FFFBFB {
+  background-color: #FFFBFB;
+}
+
+.bg-FAFFF8 {
+  background-color: #FAFFF8;
+}
+
+.bg-F8FAFF {
+  background-color: #F8FAFF;
+}
+
+.bg-0D9488 {
+  background-color: #0D9488;
+}
+
+.activity-card .info-area {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.state-wise-list {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
+.state-wise-list-card {
+  border-bottom: 1px solid #DFDEDE;
+  margin: 0 32px;
+}
+
+.state-wise-list-card .title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #808080;
+}
+
+.circular-progress-bar {
+  width: 52px;
+  height: 52px
+}
+
+/* Map */
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+#india {
+  /*    fill: #00BCD4;
+        opacity: .7; */
+  stroke: #101010;
+  stroke-width: 0.6;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 10px;
+  color: #222;
+  background: #fff;
+  border-radius: 2px;
+  pointer-events: none;
+  box-shadow: 0px 0px 2px 0px #a6a6a6;
+}
+
+.key path {
+  display: none;
+}
+
+.key line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.key text {
+  font-size: 10px;
+}
+
+.key rect {
+  stroke-width: 0.4;
+}
+
+.india-map {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.top-cards {
+  border-radius: 7px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.ga-top-card:hover,
+.management-top-card:hover {
+  background-color: #0D9488;
+}
+
+.ga-top-card:hover a,
+.management-top-card:hover a,
+.management-top-card:hover i {
+  color: #FFFFFF;
+}
+
+.apexcharts-legend-series {
+  line-height: 10px !important;
+  text-align: right;
+  margin-bottom: 7px !important;
+}
+
+/* Badges */
+.custom-green-badge {
+  font-family: "Raleway", sans-serif;
+  background-color: #0D9488;
+  width: 82px;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.custom-white-badge {
+  font-family: "Raleway", sans-serif;
+  width: 82px;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1px solid #DFDEDE;
+  color: #707070;
+  border-radius: 4px;
+}
+
+/* Chatbot Sections List */
+.chatbot-list {
+  overflow-y: scroll;
+  max-height: 300px;
+}
+
+.chatbot-list-card {
+  border-bottom: 1px solid #DFDEDE;
+  padding: 15px;
+}
+
+.chatbot-list-card .count-pill {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 24px;
+  padding: 0 2px;
+  width: 78px;
+}
+
+/* Filters Dropdown */
+
+.dropdown .filters-dropdown {
+  width: 398px;
+  inset: 0px 0px auto auto !important;
+}
+
+.dropdown .filters-dropdown .form-select {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #707070;
+  line-height: 24px;
+  background-image: url(/public/images/Chevron-down.png);
+  background-size: 18px;
+  border: 1px solid #DFDEDE;
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 5px 12px;
+}
+
+.dropdown .filters-dropdown label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #5584AC;
+  line-height: 24px;
+  margin-bottom: 1.5px;
+  font-weight: 500;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a:link {
+  text-decoration: none;
+}
